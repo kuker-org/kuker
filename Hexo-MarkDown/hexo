@@ -39,19 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-新建一篇文">
+<meta name="description" content="Hexo,由Note.js搭建的静态博客系统，以下是一些常用的命令。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo常用命令">
 <meta property="og:url" content="http://kuker.org/Hexo-MarkDown/hexo">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-新建一篇文">
-<meta property="og:updated_time" content="2015-09-21T09:03:23.000Z">
+<meta property="og:description" content="Hexo,由Note.js搭建的静态博客系统，以下是一些常用的命令。">
+<meta property="og:updated_time" content="2015-09-21T09:07:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo常用命令">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-新建一篇文">
+<meta name="twitter:description" content="Hexo,由Note.js搭建的静态博客系统，以下是一些常用的命令。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -177,7 +174,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-21T17:03:23+08:00" content="2015-09-21">
+          <time itemprop="dateCreated" datetime="2015-09-21T17:07:07+08:00" content="2015-09-21">
             2015-09-21
           </time>
         </span>
@@ -211,7 +208,8 @@
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <span itemprop="articleBody"><p><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>,由Note.js搭建的静态博客系统，以下是一些常用的命令。</p>
+<a id="more"></a>
 <h3 id="新建一篇文章">新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>更多信息: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="本地运动服务器">本地运动服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
