@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="JavaSE,java," />
+  <meta name="keywords" content="Hexo," />
 
 
 
@@ -43,11 +43,11 @@
 Quick">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo常用命令">
-<meta property="og:url" content="http://kuker.org/随笔/hexo">
+<meta property="og:url" content="http://kuker.org/Hexo-MarkDown/hexo">
 <meta property="og:site_name" content="KUKER">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick">
-<meta property="og:updated_time" content="2015-09-21T08:40:34.000Z">
+<meta property="og:updated_time" content="2015-09-21T08:58:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo常用命令">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
@@ -177,7 +177,7 @@ Quick">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-21T16:40:34+08:00" content="2015-09-21">
+          <time itemprop="dateCreated" datetime="2015-09-21T16:58:39+08:00" content="2015-09-21">
             2015-09-21
           </time>
         </span>
@@ -187,8 +187,8 @@ Quick">
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/随笔/" itemprop="url" rel="index">
-                  <span itemprop="name">随笔</span>
+                <a href="/categories/Hexo-MarkDown/" itemprop="url" rel="index">
+                  <span itemprop="name">Hexo&MarkDown</span>
                 </a>
               </span>
 
@@ -228,9 +228,7 @@ Quick">
       
         <div class="post-tags">
           
-            <a href="/tags/JavaSE/" rel="tag">#JavaSE</a>
-          
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
           
         </div>
       
@@ -307,7 +305,7 @@ Quick">
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
