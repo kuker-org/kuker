@@ -45,7 +45,7 @@
 <meta property="og:url" content="http://kuker.org/JavaSE/base/index.html">
 <meta property="og:site_name" content="KUKER">
 <meta property="og:description" content="关键字关键字的定义和特点定义：被java语言赋予特俗含义的单词特点：关键词中所有的字母都是小写">
-<meta property="og:updated_time" content="2015-09-21T18:22:04.000Z">
+<meta property="og:updated_time" content="2015-09-21T18:26:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java语言基础组成">
 <meta name="twitter:description" content="关键字关键字的定义和特点定义：被java语言赋予特俗含义的单词特点：关键词中所有的字母都是小写">
@@ -251,7 +251,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">\n - 换行；</span><br><span class="line">\b － 退格  </span><br><span class="line">\t - 制表符（tab） </span><br><span class="line">\r - 按下回车键（windows的回车符是由\r\n来表示的）</span><br></pre></td></tr></table></figure>
 <p>转义字符：通过 \ 来转变后面字母或者符号的意思，例如\n 就是换行的意思。</p>
 <h3 id="赋值运算符">赋值运算符</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// +=  -=  *=  /=  %= </span></span><br><span class="line"></span><br><span class="line">x+=<span class="number">4</span>;  <span class="comment">// x = x + 4;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> s =<span class="number">4</span>;</span><br><span class="line">s = s + <span class="number">5</span>; <span class="comment">//编译错，两次运算，先运算＋，再赋值。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> s =<span class="number">4</span>;</span><br><span class="line">s = s + <span class="number">5</span>; <span class="comment">//编译错，两次运算，先运算＋，右边会自动提升为int,不能再赋值给byte,否则会损失精度。</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">short</span> s =<span class="number">4</span>;</span><br><span class="line">s ＋＝<span class="number">5</span>; <span class="comment">//这个可以，因为是＋＝是一次运算，就是一个赋值，在jvm虚拟机内部自动会进行类型转化。</span></span><br></pre></td></tr></table></figure>
 <h3 id="比较运算符">比较运算符</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// == != &lt;  &gt; &lt;=  &gt;=</span></span><br></pre></td></tr></table></figure>
 <h3 id="逻辑运算符">逻辑运算符</h3><p>逻辑运算符用于连接boolean类型的表达式<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//  &amp;  | &amp;&amp; ||</span></span><br></pre></td></tr></table></figure></p>
@@ -265,20 +265,8 @@
 </ul>
 <h3 id="位运算符">位运算符</h3><ul>
 <li>&lt;&lt; 其实就是左边的数乘以2的移动的位数次幂。 4&lt;<3 --=""> 4*2(3)</3></li>
-<li><blockquote>
-<blockquote>
-<p>左边除以2的移动的位数次幂 6&gt;&gt;1 –&gt; 6/2(1)</p>
-</blockquote>
-</blockquote>
-</li>
-<li><blockquote>
-<blockquote>
-<blockquote>
-<p>（无符号右移），无论最高位是什么，右移后，最高位都由1补上。</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
+<li>“&gt;&gt;”” 左边除以2的移动的位数次幂 6&gt;&gt;1 –&gt; 6/2(1)</li>
+<li>“”&gt;&gt;&gt;” （无符号右移），无论最高位是什么，右移后，最高位都由1补上。</li>
 <li>&amp; 用二进制去算</li>
 <li>| 用二进制去算</li>
 <li>^ 同一个数异或两次还是原数，可以用于加密上。</li>
