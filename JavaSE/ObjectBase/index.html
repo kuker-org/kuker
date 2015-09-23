@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -39,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Hexo,由Note.js搭建的静态博客系统，以下是一些常用的命令。">
+<meta name="description" content="对象的概念，匿名对象，构造函数，this关键字，static关键字，javadoc，简化后的单列设计模式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo常用命令">
-<meta property="og:url" content="http://kuker.org/Hexo-MarkDown/hexo/index.html">
+<meta property="og:title" content="java的面向对象(概念，匿名对象，构造函数，this,static等)">
+<meta property="og:url" content="http://kuker.org/JavaSE/ObjectBase/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="Hexo,由Note.js搭建的静态博客系统，以下是一些常用的命令。">
-<meta property="og:updated_time" content="2015-09-21T09:07:07.000Z">
+<meta property="og:description" content="对象的概念，匿名对象，构造函数，this关键字，static关键字，javadoc，简化后的单列设计模式。">
+<meta property="og:updated_time" content="2015-09-23T06:55:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo常用命令">
-<meta name="twitter:description" content="Hexo,由Note.js搭建的静态博客系统，以下是一些常用的命令。">
+<meta name="twitter:title" content="java的面向对象(概念，匿名对象，构造函数，this,static等)">
+<meta name="twitter:description" content="对象的概念，匿名对象，构造函数，this关键字，static关键字，javadoc，简化后的单列设计模式。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Hexo常用命令 | KUKER </title>
+  <title> java的面向对象(概念，匿名对象，构造函数，this,static等) | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +165,7 @@
           
           
             
-              Hexo常用命令
+              java的面向对象(概念，匿名对象，构造函数，this,static等)
             
           
         </h1>
@@ -174,8 +174,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-21T17:07:07+08:00" content="2015-09-21">
-            2015-09-21
+          <time itemprop="dateCreated" datetime="2015-09-23T13:56:49+08:00" content="2015-09-23">
+            2015-09-23
           </time>
         </span>
 
@@ -184,8 +184,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Hexo-MarkDown/" itemprop="url" rel="index">
-                  <span itemprop="name">Hexo&MarkDown</span>
+                <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                  <span itemprop="name">JavaSE</span>
                 </a>
               </span>
 
@@ -200,8 +200,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/Hexo-MarkDown/hexo/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Hexo-MarkDown/hexo/" itemprop="commentsCount"></span>
+            <a href="/JavaSE/ObjectBase/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="JavaSE/ObjectBase/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -215,17 +215,38 @@
       
 
       
-        <span itemprop="articleBody"><p><a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>,由Note.js搭建的静态博客系统，以下是一些常用的命令。</p>
-<a id="more"></a>
-<h3 id="新建一篇文章">新建一篇文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>更多信息: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="本地运动服务器">本地运动服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>更多信息: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="静态页面的生成">静态页面的生成</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>更多信息: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="部署到服务器">部署到服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>更多信息: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
+        <span itemprop="articleBody"><p>对象的概念，匿名对象，构造函数，this关键字，static关键字，javadoc，简化后的单列设计模式。<br><a id="more"></a></p>
+<h2 id="理解面向对象">理解面向对象</h2><ul>
+<li>面向对象是一种思想，是相对于面向过程而言的。</li>
+<li>面向对象和面向过程都是一种思想</li>
+<li>面向过程，强调的是功能行为</li>
+<li>面向对象，将功能封装进对象，强调具备了功能的对象</li>
+<li>面向对象是基于面向过程的</li>
+</ul>
+<p><strong>类和对象的关系</strong></p>
+<p>类就是对现实生活中事物的描述，对象就是这类事物实实在在的个体</p>
+<p><strong>成员变量和局部变量</strong></p>
+<p>作用范围：成员变量作用于整个类中，局部变量作用于函数或者语句中<br>内存位置：成员变量在堆内存中，因为对象的存在才在内存中存在，而局部变量存在于栈中。</p>
+<p><strong>匿名对象</strong></p>
+<p>匿名对象是对象的简化形式，有两种使用情况：</p>
+<ol>
+<li>当对象方法仅进行一次调用的时候</li>
+<li>匿名对象可以作为实际参数进行传递<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Car c = <span class="keyword">new</span> Car();</span><br><span class="line">c.num = <span class="number">5</span>; </span><br><span class="line"><span class="comment">//简写</span></span><br><span class="line"><span class="keyword">new</span> Car().num = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="封装">封装</h2><p>封装是指隐藏对象的属性和实现细节，仅对外提供公共访问方式。这样做的好处是：将变化隔离，便于使用，提高重用性，提高安全性。封装的原则是，将不需要对外提供的内容都隐藏起来，把属性都隐藏，提供公共方法对其访问。</p>
+<p><strong>怎么进行封装？</strong></p>
+<p>private: 私有，权限修饰符，用于修饰类的成员变量和成员函数，私有的成员只能在本类中访问。</p>
+<h2 id="构造函数">构造函数</h2><p>特点：函数名与类名一样，不用定义返回值类型，不可以写return语句. 一个对象建立，构造函数执行一次，而方法可以执行多次。<br>作用：给对象进行初始化<br>注意： 1: 默认构造函数的特点。 2: 多个构造函数以重载的方式存在。3: 当类中定义了构造函数，默认构造函数就没有了。</p>
+<p><strong>什么时候定义构造函数？</strong></p>
+<p>当分析事物，该事物存在具备一些特性和行为，那么将这些内容定义在构造函数中。</p>
+<h2 id="构造代码块">构造代码块</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"构造代码块"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span><br><span class="line"></span><br><span class="line">	Person p </span>= <span class="keyword">new</span> Person(); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结果： 构造代码块</span></span><br></pre></td></tr></table></figure>
+<p>构造代码块：是给对象进行初始化，对象一旦建立就会运行，而且优先于构造函数执行。构造代码块是给所有的对象进行统一初始化，而构造函数是给对应的函数进行初始化（构造函数可以用重载做多个构造函数，建立对象初始化需要通过参数来指定构造函数）。</p>
+<p><strong>其实构造代码块的出现是为了可以提取多个构造函数中的相同部分。</strong></p>
+<h2 id="this关键字">this关键字</h2><p>this: 代表本类的当前对象，代表它所在函数所属对象的引用. 简单说：哪个对像在调用this所在的函数，this就代表这个对象。</p>
+<p>this应用： 当定义类中功能时，该函数内部要用到该函数的对象时，这时用this来表示这个对象，但凡本类功能内部使用了本来的对象，都用this表示。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	Person(String name) &#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Person(String name, <span class="keyword">int</span> age) &#123;</span><br><span class="line">		<span class="keyword">this</span>(name);</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="static_关键字">static 关键字</h2></span>
       
     </div>
 
@@ -233,7 +254,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/Java/" rel="tag">#Java</a>
           
         </div>
       
@@ -242,11 +263,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/base/" rel="prev">Java语言基础组成</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaSE/array/" rel="next">Java当中的数组</a>
             
           </div>
         </div>
@@ -354,7 +375,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建一篇文章"><span class="nav-number">1.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地运动服务器"><span class="nav-number">2.</span> <span class="nav-text">本地运动服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态页面的生成"><span class="nav-number">3.</span> <span class="nav-text">静态页面的生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到服务器"><span class="nav-number">4.</span> <span class="nav-text">部署到服务器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解面向对象"><span class="nav-number">1.</span> <span class="nav-text">理解面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装"><span class="nav-number">2.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">3.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造代码块"><span class="nav-number">4.</span> <span class="nav-text">构造代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this关键字"><span class="nav-number">5.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static_关键字"><span class="nav-number">6.</span> <span class="nav-text">static 关键字</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -408,9 +429,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'kuker';
-      var disqus_identifier = 'Hexo-MarkDown/hexo/';
-      var disqus_title = 'Hexo常用命令';
-      var disqus_url = 'http://kuker.org/Hexo-MarkDown/hexo/';
+      var disqus_identifier = 'JavaSE/ObjectBase/';
+      var disqus_title = 'java的面向对象(概念，匿名对象，构造函数，this,static等)';
+      var disqus_url = 'http://kuker.org/JavaSE/ObjectBase/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
