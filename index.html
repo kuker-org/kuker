@@ -166,6 +166,106 @@
           
           
             
+              <a class="post-title-link" href="/JavaSE/Polymorphism/" itemprop="url">
+                Java中的多态
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-24T15:31:33+08:00" content="2015-09-24">
+            2015-09-24
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                  <span itemprop="name">JavaSE</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/JavaSE/Polymorphism/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Polymorphism/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>多态：可以理解为事物存在的多种形态。</p>
+<p><strong>多态的体现</strong></p>
+<p>父类的引用指向了自己子类的对象<br>父类的引用也可以接受自己子类的对象</p>
+<p><strong>多态的前提</strong></p>
+<p>必须类与类之间有关系，要么继承，要么接口<br>通常还有一个前提，就是存在覆盖</p>
+<p><strong>多态的好处</strong></p>
+<p>大大提高了程序的扩展性</p>
+<p><strong>多态的弊端</strong></p>
+<p>提高了扩展型，但是只能使用父类的引用访问父类的成员。</p>
+<p><strong>多态的应用</strong></p>
+<p>Animal a = new Cat(); //类型提升向上转型</p>
+<p>如果要调用猫的特有方法，需要强制将父类的引用转成子类类型。<br>Cat c = (Cat) a;</p>
+<p><strong>在多态中成员函数的特点</strong></p>
+<p>在编译时期：参阅引用型变量所属的类中是否有调用的方法，如果有，编译通过。<br>在运行时期，参照对象所属的类中是否有调用的方法。</p>
+<h2 id="Objext类">Objext类</h2><p>每个类都使用作为超类。</p>
+<p><strong>equals(Object obj)</strong></p>
+<p>判断对象是否相等，如果自定义类中也有比较相同的功能，没有必要重新定义，只要沿袭父类中的功能，建立自己特有的比较内容就可以，这就是覆盖。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/JavaSE/extends/" itemprop="url">
                 Java中的继承，聚集关系，final,抽象类，接口等
               </a>
@@ -629,7 +729,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

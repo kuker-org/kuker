@@ -39,16 +39,49 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="继承，聚集关系，子父类中变量的特点，函数覆盖，子类实例化过程，final关键字，抽象类，模版方法模式，接口">
+<meta name="description" content="多态：可以理解为事物存在的多种形态。
+多态的体现
+父类的引用指向了自己子类的对象父类的引用也可以接受自己子类的对象
+多态的前提
+必须类与类之间有关系，要么继承，要么接口通常还有一个前提，就是存在覆盖
+多态的好处
+大大提高了程序的扩展性
+多态的弊端
+提高了扩展型，但是只能使用父类的引用访问父类的成员。
+多态的应用
+Animal a = new Cat(); //类型提升向上转型
+如果要调用猫的特有方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的继承，聚集关系，final,抽象类，接口等">
-<meta property="og:url" content="http://kuker.org/JavaSE/extends/index.html">
+<meta property="og:title" content="Java中的多态">
+<meta property="og:url" content="http://kuker.org/JavaSE/Polymorphism/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="继承，聚集关系，子父类中变量的特点，函数覆盖，子类实例化过程，final关键字，抽象类，模版方法模式，接口">
-<meta property="og:updated_time" content="2015-09-24T07:29:20.000Z">
+<meta property="og:description" content="多态：可以理解为事物存在的多种形态。
+多态的体现
+父类的引用指向了自己子类的对象父类的引用也可以接受自己子类的对象
+多态的前提
+必须类与类之间有关系，要么继承，要么接口通常还有一个前提，就是存在覆盖
+多态的好处
+大大提高了程序的扩展性
+多态的弊端
+提高了扩展型，但是只能使用父类的引用访问父类的成员。
+多态的应用
+Animal a = new Cat(); //类型提升向上转型
+如果要调用猫的特有方">
+<meta property="og:updated_time" content="2015-09-25T04:27:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的继承，聚集关系，final,抽象类，接口等">
-<meta name="twitter:description" content="继承，聚集关系，子父类中变量的特点，函数覆盖，子类实例化过程，final关键字，抽象类，模版方法模式，接口">
+<meta name="twitter:title" content="Java中的多态">
+<meta name="twitter:description" content="多态：可以理解为事物存在的多种形态。
+多态的体现
+父类的引用指向了自己子类的对象父类的引用也可以接受自己子类的对象
+多态的前提
+必须类与类之间有关系，要么继承，要么接口通常还有一个前提，就是存在覆盖
+多态的好处
+大大提高了程序的扩展性
+多态的弊端
+提高了扩展型，但是只能使用父类的引用访问父类的成员。
+多态的应用
+Animal a = new Cat(); //类型提升向上转型
+如果要调用猫的特有方">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +91,7 @@
   };
 </script>
 
-  <title> Java中的继承，聚集关系，final,抽象类，接口等 | KUKER </title>
+  <title> Java中的多态 | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +198,7 @@
           
           
             
-              Java中的继承，聚集关系，final,抽象类，接口等
+              Java中的多态
             
           
         </h1>
@@ -174,7 +207,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-24T00:49:18+08:00" content="2015-09-24">
+          <time itemprop="dateCreated" datetime="2015-09-24T15:31:33+08:00" content="2015-09-24">
             2015-09-24
           </time>
         </span>
@@ -200,8 +233,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/JavaSE/extends/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/extends/" itemprop="commentsCount"></span>
+              <a href="/JavaSE/Polymorphism/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Polymorphism/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -215,41 +248,23 @@
       
 
       
-        <span itemprop="articleBody"><p>继承，聚集关系，子父类中变量的特点，函数覆盖，子类实例化过程，final关键字，抽象类，模版方法模式，接口<br><a id="more"></a></p>
-<h2 id="继承">继承</h2><h3 id="概述">概述</h3><ol>
-<li>提高代码的复用性</li>
-<li>让类与类之间产生关系，有了这个关系，才有了多态的特性</li>
-<li>千万不要为了获取其他类的功能，简化代码而继承，必须类与类之间有所属关系才可以继承，所属关系 is..a </li>
-<li>java中只支持单继承，不支持多继承(其实可以，放了接口那边了)</li>
-<li>使用子类，需要查阅父类功能，创建子类对象使用功能。</li>
-</ol>
-<p>Eg:  dog is a animal<br>     Student is a Person</p>
-<p>如果没有判断是否可以存在继承，可以尝试继承下，是不是父类的功能子类都可以具有。</p>
-<h2 id="聚集关系（聚合，组合）">聚集关系（聚合，组合）</h2><p>has a </p>
-<h2 id="子父类出现后，类中成员的特点:">子父类出现后，类中成员的特点:</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">	类中成员：</span><br><span class="line">	1. 变量: 如果子类中出现非私有的成员变量时，子类访问本类中的变量，用this.子类要访问父类中的同名变量用super</span><br><span class="line"></span><br><span class="line">	2. 函数: 当子类出现和父类一摸一样的函数时，如同父类的函数被覆盖一样，这种情况叫重写（覆盖）</span><br><span class="line"></span><br><span class="line">			当子类继承了父类，沿袭了父类的功能到子类中，但是子类的功能内容和父类不一致，这时没有必要使用新特性，而是使用覆盖父类的功能定义，重写功能内容。</span><br><span class="line"></span><br><span class="line">			覆盖： 子类覆盖父类，权限必须大于等于父类权限</span><br><span class="line">			静态只能覆盖静态</span><br><span class="line"></span><br><span class="line">	3. 构造函数</span><br><span class="line">		在对子类对象进行初始化，父类的构造函数也会运行，因为子类的构造函数默认第一行有一条隐藏的语句super();super()会访问父类中空参数的构造函数，而且子类中所有的构造函数默认第一行都是super();</span><br><span class="line"></span><br><span class="line">		为什么子类一定要访问父类中的构造函数？</span><br><span class="line">		因为父类中的数据子类是可以获取的，所以子类对象在建立时，需要先查看父类是如何对这些数据进行初始化的，所以子类在初始化的时候，要先访问下父类中的构造函数。如果要访问父类中指定的构造函数，可以通过手动定义super语句的方式来指定。</span><br><span class="line"></span><br><span class="line">		注意：super语句一定在子类构造函数的第一行。</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(num);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="keyword">super</span>.num); <span class="comment">//num =4</span></span><br><span class="line">		System.out.println(<span class="keyword">this</span>.num); <span class="comment">// num =5</span></span><br><span class="line">		System.out.println(num); <span class="comment">// num =5</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExtendsDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Son son = <span class="keyword">new</span> Son();</span><br><span class="line">		son.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="final关键字">final关键字</h2><ol>
-<li>可以修饰类，变量，函数</li>
-<li>被final修饰的类不能被继承，被final继承的变量是常量，被final修饰的函数不能被重写。</li>
-</ol>
-<h2 id="抽象类">抽象类</h2><p>当多个类中出现相同的功能，但是功能主体不同，这时可以向上抽取。这时，只抽取功能定义，而不抽取功能主题。</p>
-<p>含有抽象函数的类叫做抽象类，抽象函数是没有方法体的函数<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">abstrcat <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p>
-<p>抽象方法和抽象类都必须被关键词abstract关键字修饰<br>抽象类不可以用new创建对象，因为调用抽象方法没有意义<br>抽象类中的方法要被使用，必须由子类覆写所有的抽象方法后，建立子类对象的调用，如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类。 </p>
-<h2 id="模版方法设计模式">模版方法设计模式</h2><p>在定义功能的时候，功能的一部分是确定的，但是有一部分是不确定的，而确定的部分在使用不确定的部分，那么将不确定的部分暴露出去，由子类来完成。</p>
-<h2 id="接口">接口</h2><p>interface()</p>
-<p>当抽象类中的方法全部是抽象的，那么这个类可以通过接口的形式来表示。</p>
-<ol>
-<li>接口中常见定义： 常量，抽象方法</li>
-<li>接口中的成员都有固定的修饰符<br> 常量： public static final<br> 方法： public abstract </li>
-<li>接口可以被类多实现</li>
-</ol>
-<p>总结： 接口中的成员都是public的，只要类类型是interface,内部成员只有常量和抽象方法。子类一定要实现接口才能实例化，否则子类还是抽象类，接口本身是不能创建对象的。</p>
-<h3 id="接口的特点">接口的特点</h3><ul>
-<li>接口是对外暴露的规则</li>
-<li>接口是程序功能的扩展</li>
-<li>接口可以多实现</li>
-<li>类和接口之间是实现关系，而且类可以继承一个类的同时并实现接口</li>
-<li>接口与接口之间可以有继承关系。</li>
-</ul>
+        <span itemprop="articleBody"><p>多态：可以理解为事物存在的多种形态。</p>
+<p><strong>多态的体现</strong></p>
+<p>父类的引用指向了自己子类的对象<br>父类的引用也可以接受自己子类的对象</p>
+<p><strong>多态的前提</strong></p>
+<p>必须类与类之间有关系，要么继承，要么接口<br>通常还有一个前提，就是存在覆盖</p>
+<p><strong>多态的好处</strong></p>
+<p>大大提高了程序的扩展性</p>
+<p><strong>多态的弊端</strong></p>
+<p>提高了扩展型，但是只能使用父类的引用访问父类的成员。</p>
+<p><strong>多态的应用</strong></p>
+<p>Animal a = new Cat(); //类型提升向上转型</p>
+<p>如果要调用猫的特有方法，需要强制将父类的引用转成子类类型。<br>Cat c = (Cat) a;</p>
+<p><strong>在多态中成员函数的特点</strong></p>
+<p>在编译时期：参阅引用型变量所属的类中是否有调用的方法，如果有，编译通过。<br>在运行时期，参照对象所属的类中是否有调用的方法。</p>
+<h2 id="Objext类">Objext类</h2><p>每个类都使用作为超类。</p>
+<p><strong>equals(Object obj)</strong></p>
+<p>判断对象是否相等，如果自定义类中也有比较相同的功能，没有必要重新定义，只要沿袭父类中的功能，建立自己特有的比较内容就可以，这就是覆盖。</p>
 </span>
       
     </div>
@@ -267,13 +282,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/Polymorphism/" rel="prev">Java中的多态</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaSE/ObjectBase/" rel="next">java的面向对象(概念，匿名对象，构造函数，this,static等)</a>
+              <a href="/JavaSE/extends/" rel="next">Java中的继承，聚集关系，final,抽象类，接口等</a>
             
           </div>
         </div>
@@ -298,8 +311,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="JavaSE/extends/"
-                   data-title="Java中的继承，聚集关系，final,抽象类，接口等" data-url="http://kuker.org/JavaSE/extends/">
+              <div class="ds-thread" data-thread-key="JavaSE/Polymorphism/"
+                   data-title="Java中的多态" data-url="http://kuker.org/JavaSE/Polymorphism/">
               </div>
             
           </div>
@@ -381,7 +394,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚集关系（聚合，组合）"><span class="nav-number">2.</span> <span class="nav-text">聚集关系（聚合，组合）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子父类出现后，类中成员的特点:"><span class="nav-number">3.</span> <span class="nav-text">子父类出现后，类中成员的特点:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final关键字"><span class="nav-number">4.</span> <span class="nav-text">final关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类"><span class="nav-number">5.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模版方法设计模式"><span class="nav-number">6.</span> <span class="nav-text">模版方法设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">7.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口的特点"><span class="nav-number">7.1.</span> <span class="nav-text">接口的特点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objext类"><span class="nav-number">1.</span> <span class="nav-text">Objext类</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
