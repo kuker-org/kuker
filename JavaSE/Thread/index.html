@@ -1,0 +1,656 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="kuker的网络笔记." />
+
+
+
+  <meta name="keywords" content="kuker,kuker.org,hexo" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="多线程是java中的重点和难点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的多线程（重点）">
+<meta property="og:url" content="http://kuker.org/JavaSE/Thread/index.html">
+<meta property="og:site_name" content="KUKER">
+<meta property="og:description" content="多线程是java中的重点和难点。">
+<meta property="og:image" content="http://7xly7h.com1.z0.glb.clouddn.com/threadState.jpg">
+<meta property="og:updated_time" content="2015-09-28T08:29:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java中的多线程（重点）">
+<meta name="twitter:description" content="多线程是java中的重点和难点。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> Java中的多线程（重点） | KUKER </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">KUKER</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Java中的多线程（重点）
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-28T14:35:56+08:00" content="2015-09-28">
+            2015-09-28
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/JavaSE/Thread/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Thread/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>多线程是java中的重点和难点。</p>
+<a id="more"></a>
+<h2 id="多线程概述">多线程概述</h2><p><strong>进程</strong></p>
+<p>一个正在执行中的程序，每一个进行执行一个执行程序，该顺序是一个执行路径，或者叫一个控制单元。（运行QQ，迅雷等程序都会有个进程，CPU切换运行它们。）</p>
+<p><strong>线程</strong></p>
+<p>线程就是进程中的一个独立的控制单元，线程在控制着进程的执行，一个进程中至少有一个线程。</p>
+<p>Jvm启动的时候有一个进程java.exe,该进程中至少有一个线程负责java程序的执行，而且这个线程运行的代码存在于main方法中，该线程称为主线程。（只有main线程的程序通常我们可以称为单线程，而针对实际内存处理来说，其实只要运行java,就是多线程，它至少会有主线程和垃圾回收的线程）</p>
+<h2 id="自定义的创建线程第一种方法">自定义的创建线程第一种方法</h2><p>通过对API的查找，java已经提供了线程这类事物的描述，就是Thread类，创建线程的第一种方法就是继承Thread类，并覆盖它的run().<br>方法。</p>
+<h3 id="创建线程方法一的步骤：">创建线程方法一的步骤：</h3><ol>
+<li>定义类并继承Thread</li>
+<li>复写Thread中的run()方法。(目的：将自定义代码放在run()中，让线程运行)</li>
+<li>调用线程的start()方法，该方法的作用有两个，一个是启动线程，然后执行run()方法。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;  <span class="comment">// 第一步：定义类并继承Thread</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">//第二步： 复写Thread中的run()方法。</span></span><br><span class="line">		System.out.println(<span class="string">"demo run"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo d = <span class="keyword">new</span> Demo(); <span class="comment">//要调用start(),要先创建个线程；</span></span><br><span class="line">		d.start(); <span class="comment">//调用线程的start()</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面代码是演示创意并启动运行一个线程。</span></span><br></pre></td></tr></table></figure>
+<p>代码修改下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x =<span class="number">0</span>; x&lt;<span class="number">60</span>; x++) <span class="comment">// 增加的代码</span></span><br><span class="line">		System.out.println(<span class="string">"demo run Thread"</span> + x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Demo d = <span class="keyword">new</span> Demo(); </span><br><span class="line">		d.start(); <span class="comment">//d.run(); 如果直接写d.run()是不可以的，这样没有开启线程，run()会由主线程调用。</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x =<span class="number">0</span>; x&lt;<span class="number">60</span>; x++) </span><br><span class="line">			System.out.println(<span class="string">"Main Thread--"</span> + x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面代码是演示创意并启动运行一个线程。</span></span><br></pre></td></tr></table></figure>
+<p>上面代码的运行结果每次都不一样，因为多线程都获取CPU的执行权，CPU执行到谁，谁就运行，明确一点，在某一时刻，只能有一个程序在运行（多核除外），CPU快速切换.这就是多线程的一个特性：随机性：谁抢到谁执行，至于执行多长时间，cpu说了算。</p>
+<p><strong>为什么要覆盖run()方法？</strong></p>
+<p>Thread类用于描述线程。该类定义了一个功能，用于存储线程要运行的代码，该存储功能就是run()方法。也就是说Thread类中的run()<br>方法是用于储存线程要运行的代码。(类似主线程要运行的代码要放在main()方法中)，默认run()方法中没有任何内容，所以必须需要覆写，建立你自己的代码。</p>
+<p><strong>做个小练习</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//练习：创建两个线程，和主线程交替运行</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">	Test(String name) &#123;</span><br><span class="line">		<span class="comment">//this.name = name;</span></span><br><span class="line">		<span class="keyword">super</span>(name); <span class="comment">//Thread(String name);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>;x&lt;<span class="number">60</span> ;x++ ) &#123;</span><br><span class="line">			System.out.println(name + <span class="string">"Test run"</span> +x);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		 Test t1 = <span class="keyword">new</span> Test(<span class="string">"one"</span>);</span><br><span class="line">		 t1.start();</span><br><span class="line"></span><br><span class="line">		 Test t2 = <span class="keyword">new</span> Test(<span class="string">"two"</span>);</span><br><span class="line"></span><br><span class="line">		 <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>;x&lt;<span class="number">60</span>;x++) &#123;</span><br><span class="line">		 	System.out.println(<span class="string">"main run"</span> +x);</span><br><span class="line">		 &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="线程在内存中的几种状态">线程在内存中的几种状态</h2><p>线程在内存中共有5种状态：</p>
+<ol>
+<li>线程被创建：2. 线程运行：3. 线程冻结4. 临时状态 5. 销亡状态</li>
+</ol>
+<p>线程被创建了，再运行前，可能会在临时状态中（有执行的资格，但是还没抢到cpu，在等待cpu）,该线程抢到cpu就能运行，如果线程被别的线程抢了，又会进入到临时状态。如果要进入冻结状态，可以有两种方式，一种是sleep(time)，另一个是wait(),进入冻结状态的,sleep(time)会在时间到了，自动唤醒，而wait()的需要手动用notify()来唤醒它。唤醒线程后，又回进入到临时状态，等待运行。线程在run()方法结束会自动消亡，或者使用stop()来消亡它。 可以参考下图。</p>
+<p><img src="http://7xly7h.com1.z0.glb.clouddn.com/threadState.jpg" alt="线程在内存中的状态"></p>
+<h2 id="获取线程的对象及名称">获取线程的对象及名称</h2><p>查找API文档，Thread中有setName()和getName()方法。线程都有自己的默认名称：Thread-编号，通过对象.getName()可以获取。也可以通过Thread.currentThread.getName();<br>来获取当前对象的名字，这个经常用。</p>
+<p>线程有个构造函数 Thread(String name)，这里可以设置线程的对象的名称，或者用setName()函数。</p>
+<h2 id="创建线程的第二种方法">创建线程的第二种方法</h2><p>声明实现Runnable接口，然后覆盖run()方法</p>
+<ol>
+<li>定义类实现Runnable接口</li>
+<li>覆盖Runnable接口中的run()方法 （将线程要运行的代码存放在该方法中）</li>
+<li>建立Runnable子类对象</li>
+<li>建立Thread对象，并将Rubbable接口的子类作为实际参数传递给Thread类的构造函数 （自定义的run方法所属的对象是Runnable接口的指定对象，要让线程去指定对象的run()方法，就必须明确该run方法所属的对象。）</li>
+<li>调用Thread类的start方法开启线程并调用Runnable接口子类的run方法。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">简单的卖票程序，多个窗口卖票，演示线程创建的第二种方法</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span>//第一步：定义类实现<span class="title">Runnable</span>接口</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> tick = <span class="number">100</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">//第二步：覆盖Runnable接口中的run()方法</span></span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(tick &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				System.out.println(Thread.currentThread.getName()+<span class="string">"Sale: "</span> + tick--);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SaleTicket</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Ticket t = <span class="keyword">new</span> Ticket(); <span class="comment">//第三步：建立Runnable子类对象</span></span><br><span class="line"></span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(t); <span class="comment">//第4步：建立Thread 对象，并将Runnable子类对象作为参数传给Thread构造函数</span></span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		Thread t3 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		Thread t4 = <span class="keyword">new</span> Thread(t);</span><br><span class="line"></span><br><span class="line">		t1.start(); <span class="comment">//第5步：调用Thread类的start()方法，调用Runnable接口的子类的run()方法。</span></span><br><span class="line">		t2.start();</span><br><span class="line">		t3.start();</span><br><span class="line">		t4.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>实现方式和继承方式的区别（关键点）</strong></p>
+<p>因为java是单继承的，如果一个类要继承非Thread父类，但是需要多线程，这样就需要用接口来实现，就有了Runnable接口。所以在开发中一般用Runnable();</p>
+<p>两种方式最大的区别就是线程代码存放的位置不一样。继承方式线程代码存在于Thread()的run()方法中， 而实现方式的线程代码在Runnable()的run()方法中。</p>
+<h2 id="多线程的安全问题">多线程的安全问题</h2><p>问题的原因：当多条语句在操作同一个线程共享数据时，一个线程对多条语句只执行了一部分，还没有执行完，另一个线程参与进来执行，导致了共享数据的错误。</p>
+<p>解决的方式：对多条操作共享数据的语句，只能让一个线程都执行完，在执行过程中其他线程不可以参与执行。</p>
+<p>java对于多线程的安全问题，采用同步代码块来解决。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(对象) &#123;</span><br><span class="line">	需要被同步的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>同步的前提</strong></p>
+<ol>
+<li>必须要有两个或者两个以上的线程</li>
+<li>必须是多个线程使用同一个锁</li>
+</ol>
+<p>必须保证同步中只有一个线程在执行。</p>
+<p><strong>同步的好坏</strong><br>好处：解决了多线程的安全问题  弊端：多个进程都要判断锁，较为消耗资源（比如门上上10把锁，更安全，但是效率慢了）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> tick = <span class="number">100</span>;</span><br><span class="line">	Object obj = <span class="keyword">new</span> Object();</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">synchronized</span>(obj) &#123; <span class="comment">//同步代码块，让里面的代码保证只有一个线程在运行</span></span><br><span class="line">				<span class="keyword">if</span>(tick &gt; <span class="number">0</span>) &#123;</span><br><span class="line">					System.out.println(Thread.currentThread.getName()+<span class="string">"Sale: "</span> + tick--);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SaleTicket</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		Ticket t = <span class="keyword">new</span> Tocket(); </span><br><span class="line"></span><br><span class="line">		Thread t1 = <span class="keyword">new</span> Thread(t);</span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(t);</span><br><span class="line"></span><br><span class="line">		t1.start();</span><br><span class="line">		t2.start();</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaSE/TryCatch/" rel="next">java中的异常(重点)</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="JavaSE/Thread/"
+                   data-title="Java中的多线程（重点）" data-url="http://kuker.org/JavaSE/Thread/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="Kuker Chou" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Kuker Chou</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">kuker的网络笔记.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程概述"><span class="nav-number">1.</span> <span class="nav-text">多线程概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义的创建线程第一种方法"><span class="nav-number">2.</span> <span class="nav-text">自定义的创建线程第一种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建线程方法一的步骤："><span class="nav-number">2.1.</span> <span class="nav-text">创建线程方法一的步骤：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程在内存中的几种状态"><span class="nav-number">3.</span> <span class="nav-text">线程在内存中的几种状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取线程的对象及名称"><span class="nav-number">4.</span> <span class="nav-text">获取线程的对象及名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建线程的第二种方法"><span class="nav-number">5.</span> <span class="nav-text">创建线程的第二种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的安全问题"><span class="nav-number">6.</span> <span class="nav-text">多线程的安全问题</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kuker Chou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kuker"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
