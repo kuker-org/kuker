@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="JDBC," />
 
 
 
@@ -39,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="description" content="JDBC：java Date Base ConnectivityJava提供了一些接口。java.sql,javax.包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的多态">
-<meta property="og:url" content="http://kuker.org/JavaSE/Polymorphism/index.html">
+<meta property="og:title" content="jdbc的概述及简单的例子">
+<meta property="og:url" content="http://kuker.org/JDBC/aboutjdbc/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="多态：可以理解为事物存在的多种形态。">
-<meta property="og:updated_time" content="2015-09-25T04:30:16.000Z">
+<meta property="og:description" content="JDBC：java Date Base ConnectivityJava提供了一些接口。java.sql,javax.包">
+<meta property="og:updated_time" content="2015-09-29T07:52:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的多态">
-<meta name="twitter:description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="twitter:title" content="jdbc的概述及简单的例子">
+<meta name="twitter:description" content="JDBC：java Date Base ConnectivityJava提供了一些接口。java.sql,javax.包">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Java中的多态 | KUKER </title>
+  <title> jdbc的概述及简单的例子 | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +165,7 @@
           
           
             
-              Java中的多态
+              jdbc的概述及简单的例子
             
           
         </h1>
@@ -174,8 +174,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-24T15:31:33+08:00" content="2015-09-24">
-            2015-09-24
+          <time itemprop="dateCreated" datetime="2015-09-29T15:24:41+08:00" content="2015-09-29">
+            2015-09-29
           </time>
         </span>
 
@@ -184,8 +184,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                  <span itemprop="name">JavaSE</span>
+                <a href="/categories/JDBC/" itemprop="url" rel="index">
+                  <span itemprop="name">JDBC</span>
                 </a>
               </span>
 
@@ -200,8 +200,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/JavaSE/Polymorphism/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Polymorphism/" itemprop="commentsCount"></span>
+              <a href="/JDBC/aboutjdbc/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JDBC/aboutjdbc/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -215,22 +215,16 @@
       
 
       
-        <span itemprop="articleBody"><p>多态：可以理解为事物存在的多种形态。<br><a id="more"></a><br><strong>多态的体现</strong></p>
-<p>父类的引用指向了自己子类的对象<br>父类的引用也可以接受自己子类的对象</p>
-<p><strong>多态的前提</strong></p>
-<p>必须类与类之间有关系，要么继承，要么接口<br>通常还有一个前提，就是存在覆盖</p>
-<p><strong>多态的好处</strong></p>
-<p>大大提高了程序的扩展性</p>
-<p><strong>多态的弊端</strong></p>
-<p>提高了扩展型，但是只能使用父类的引用访问父类的成员。</p>
-<p><strong>多态的应用</strong></p>
-<p>Animal a = new Cat(); //类型提升向上转型</p>
-<p>如果要调用猫的特有方法，需要强制将父类的引用转成子类类型。<br>Cat c = (Cat) a;</p>
-<p><strong>在多态中成员函数的特点</strong></p>
-<p>在编译时期：参阅引用型变量所属的类中是否有调用的方法，如果有，编译通过。<br>在运行时期，参照对象所属的类中是否有调用的方法。</p>
-<h2 id="Objext类">Objext类</h2><p>每个类都使用作为超类。</p>
-<p><strong>equals(Object obj)</strong></p>
-<p>判断对象是否相等，如果自定义类中也有比较相同的功能，没有必要重新定义，只要沿袭父类中的功能，建立自己特有的比较内容就可以，这就是覆盖。</p>
+        <span itemprop="articleBody"><p>JDBC：java Date Base ConnectivityJava提供了一些接口。java.sql,javax.包<br><a id="more"></a><br>应用程序（程序员开发） －－ JDBC（都是接口）－－ （MYSQL Driver Oracle Driver DB2 Driver －－这些里面是类）</p>
+<p>JAVA提供接口，数据库厂商实现接口，写成自己数据库的驱动，不用程序员去写这些驱动，只要能使用就行。</p>
+<h3 id="JDBC连接数据的步骤">JDBC连接数据的步骤</h3><ol>
+<li>注册驱动（只做一次）</li>
+<li>建立连接（Connection）</li>
+<li>创建执行SQL的语句(Statement)</li>
+<li>执行语句</li>
+<li>处理执行结果(ResultSet)</li>
+<li>释放资源</li>
+</ol>
 </span>
       
     </div>
@@ -239,7 +233,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag">#Java</a>
+            <a href="/tags/JDBC/" rel="tag">#JDBC</a>
           
         </div>
       
@@ -248,13 +242,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/TryCatch/" rel="prev">java中的异常(重点)</a>
+              <a href="/JavaSE/String/" rel="prev">String</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaSE/extends/" rel="next">Java中的继承，聚集关系，final,抽象类，接口等</a>
+              <a href="/JavaSE/Thread/" rel="next">Java中的多线程（重点）</a>
             
           </div>
         </div>
@@ -279,8 +273,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="JavaSE/Polymorphism/"
-                   data-title="Java中的多态" data-url="http://kuker.org/JavaSE/Polymorphism/">
+              <div class="ds-thread" data-thread-key="JDBC/aboutjdbc/"
+                   data-title="jdbc的概述及简单的例子" data-url="http://kuker.org/JDBC/aboutjdbc/">
               </div>
             
           </div>
@@ -362,7 +356,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objext类"><span class="nav-number">1.</span> <span class="nav-text">Objext类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC连接数据的步骤"><span class="nav-number">1.</span> <span class="nav-text">JDBC连接数据的步骤</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

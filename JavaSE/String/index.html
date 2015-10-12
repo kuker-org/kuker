@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="kuker,kuker.org,hexo" />
 
 
 
@@ -39,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="description" content="Java中的API部分，如：String类（字符串）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的多态">
-<meta property="og:url" content="http://kuker.org/JavaSE/Polymorphism/index.html">
+<meta property="og:title" content="String">
+<meta property="og:url" content="http://kuker.org/JavaSE/String/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="多态：可以理解为事物存在的多种形态。">
-<meta property="og:updated_time" content="2015-09-25T04:30:16.000Z">
+<meta property="og:description" content="Java中的API部分，如：String类（字符串）">
+<meta property="og:updated_time" content="2015-10-08T14:58:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的多态">
-<meta name="twitter:description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="twitter:title" content="String">
+<meta name="twitter:description" content="Java中的API部分，如：String类（字符串）">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Java中的多态 | KUKER </title>
+  <title> String | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +165,7 @@
           
           
             
-              Java中的多态
+              String
             
           
         </h1>
@@ -174,34 +174,19 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-24T15:31:33+08:00" content="2015-09-24">
-            2015-09-24
+          <time itemprop="dateCreated" datetime="2015-10-08T12:28:59+08:00" content="2015-10-08">
+            2015-10-08
           </time>
         </span>
 
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                  <span itemprop="name">JavaSE</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
         
 
         
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/JavaSE/Polymorphism/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Polymorphism/" itemprop="commentsCount"></span>
+              <a href="/JavaSE/String/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/String/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -215,46 +200,77 @@
       
 
       
-        <span itemprop="articleBody"><p>多态：可以理解为事物存在的多种形态。<br><a id="more"></a><br><strong>多态的体现</strong></p>
-<p>父类的引用指向了自己子类的对象<br>父类的引用也可以接受自己子类的对象</p>
-<p><strong>多态的前提</strong></p>
-<p>必须类与类之间有关系，要么继承，要么接口<br>通常还有一个前提，就是存在覆盖</p>
-<p><strong>多态的好处</strong></p>
-<p>大大提高了程序的扩展性</p>
-<p><strong>多态的弊端</strong></p>
-<p>提高了扩展型，但是只能使用父类的引用访问父类的成员。</p>
-<p><strong>多态的应用</strong></p>
-<p>Animal a = new Cat(); //类型提升向上转型</p>
-<p>如果要调用猫的特有方法，需要强制将父类的引用转成子类类型。<br>Cat c = (Cat) a;</p>
-<p><strong>在多态中成员函数的特点</strong></p>
-<p>在编译时期：参阅引用型变量所属的类中是否有调用的方法，如果有，编译通过。<br>在运行时期，参照对象所属的类中是否有调用的方法。</p>
-<h2 id="Objext类">Objext类</h2><p>每个类都使用作为超类。</p>
-<p><strong>equals(Object obj)</strong></p>
-<p>判断对象是否相等，如果自定义类中也有比较相同的功能，没有必要重新定义，只要沿袭父类中的功能，建立自己特有的比较内容就可以，这就是覆盖。</p>
+        <span itemprop="articleBody"><p>Java中的API部分，如：String类（字符串）<br><a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String s1 = <span class="string">"abc"</span>; <span class="comment">// S1 是一个类类型的变量，"abc"是一个对象，最大的特点是一旦被初始化就不可以被改变。</span></span><br><span class="line"></span><br><span class="line">		String s2 = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br><span class="line">		<span class="comment">//s1 和  s2区别</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//s1 在内存中一个对象，s2在内存中两个对象</span></span><br><span class="line">		String s3 = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line">		System.out.println(s1==s2); <span class="comment">//false</span></span><br><span class="line">		System.out.println(s1.equals(s2); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// String类复写了Object类中equals方法，该方法判断字符串是否相同</span></span><br><span class="line"></span><br><span class="line">		System.out.println(s1==s3); <span class="comment">//true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="字符串的操作方法(字符串的重点)">字符串的操作方法(字符串的重点)</h2><p>String类是用于描述字符串事物的，那么它就提供了多个方法对字符串进行操作。（会用字符串的方法就行）</p>
+<h3 id="1-_获取">1. 获取</h3><p><strong>1.1字符串中包含的字符数，也就是字符串的长度</strong></p>
+<p>int length() 返回字符串的长度，这是一个方法。</p>
+<p><strong>1.2 根据位置获取位置上的某个字符</strong></p>
+<p>char charAt(int index) </p>
+<p><strong>1.3 根据字符获取该字符在字符串中的位置</strong></p>
+<p>int  indexOf(int ch)  返回的ch在字符串中第一次出现的位置<br>int  indexOf(int ch, int fromIndex)  从fromIndex指定位置开始，获取ch在字符串中的位置</p>
+<p>int  indexOf(String str)  返回的str在字符串中第一次出现的位置<br>int  indexOf(String str, int fromIndex)  从fromIndex指定位置开始，获取str在字符串中的位置</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StringDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method_get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String str = <span class="string">"abcdefakpf"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//长度</span></span><br><span class="line">		sop(str.length());</span><br><span class="line"></span><br><span class="line">		<span class="comment">//根据索引获取字符</span></span><br><span class="line">		sop(str.charAt(<span class="number">4</span>)); <span class="comment">//当访问到字符串中不存在的角标时，会出现字符串角标异常</span></span><br><span class="line">		<span class="comment">//根据字符获取索引</span></span><br><span class="line">		sop(str.indexOf(<span class="string">'m'</span>,<span class="number">3</span>)); <span class="comment">//如果没有找到返回-1</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//反向索引一个字符出现位置</span></span><br><span class="line">		sop(str.lastIndexOf(<span class="string">'f'</span>)); <span class="comment">//从右往左查找</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		method_get();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sop</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		System.out.println(obj);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-_判断">2. 判断</h3><p><strong>2.1 字符串中是否包含某一个字符串</strong><br>boolean contains(CharSequence str)<br>特殊之处： indexOf(str)可以索引str第一次出现位置，如果返回－1，表示str不在字符串中存在，也可以对指定判断是否包含。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(str.indexOf(<span class="string">"aa"</span>)!=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>2.2 字符串中是否有内容</strong><br>boolean isEmpty() 原理判断长度是否为零</p>
+<p><strong>2.3 字符串是否以指定内容开头</strong><br>boolean startWith(String str);</p>
+<p><strong>2.4 字符串是否以指定内容结尾</strong><br>boolean endsWith(String str)</p>
+<p><strong>2.5 判断字符串的内容是否相同</strong><br>boolean equals(String str)</p>
+<p><strong>2.6 判断字符串的内容是否相同,并忽略大小写</strong><br>boolean equalsIgnoreCase(String str)</p>
+<h3 id="3-转换">3.转换</h3><p><strong>3.1 将字符数组转成字符串</strong><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">构造函数： String(<span class="keyword">char</span>[])</span><br><span class="line">          String(<span class="keyword">char</span>[],offset,count) 将字符数组中的一部分转成字符串</span><br><span class="line"></span><br><span class="line">静态方法： <span class="function"><span class="keyword">static</span> String <span class="title">copyValueOf</span><span class="params">(<span class="keyword">char</span>[])</span></span><br><span class="line">		  <span class="keyword">static</span> String <span class="title">ValueOf</span><span class="params">(<span class="keyword">char</span>[])</span></span></span><br></pre></td></tr></table></figure></p>
+<p><strong>3.2 将字符串转成字符数组</strong></p>
+<p>char[] toCharArray(); //将字符串变成字符数组</p>
+<p><strong>3.3 将字节数组转成字符串</strong><br>byte[] getByte();</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">构造函数： String(<span class="keyword">byte</span>[])</span><br><span class="line">          String(<span class="keyword">byte</span>[],offset,count)</span><br></pre></td></tr></table></figure>
+<p><strong>3.4 将字符串转成字节数组</strong></p>
+<p><strong>3.5 将基本数据类型转成字符串</strong></p>
+<p>static String ValueOf(int)<br>static String ValueOf(double)</p>
+<p>//3+””; //String.valueOf(3);</p>
+<h3 id="4-_替换">4. 替换</h3><p>String replace(char oldchar, char newchar)</p>
+<h3 id="5-_切割">5. 切割</h3><p>String［］ split(regex)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method_split</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	String s = <span class="string">"zhangdan,lisimwanwu"</span>;</span><br><span class="line">	String[] arr = s.split(<span class="string">","</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>; x&lt;arr.length; x++) &#123;</span><br><span class="line">	sop(arr[x]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-_子串，获取字符串中的一部分">6. 子串，获取字符串中的一部分</h2><p>String subString(begin) //begin开始到结尾，角标不存在，会出现角标越界异常<br>String subString(begin,end) //包含头，不包含尾</p>
+<h2 id="7-转换，去除空格，比较">7.转换，去除空格，比较</h2><p><strong>7.1 将字符串转成大写或小写</strong></p>
+<p>String toUpperCase();<br>String toLowerCase();</p>
+<p><strong>7.2 将字符串两端的多个空格去除</strong><br>String trim();</p>
+<p><strong>7.3 将两个字符串进行自然顺序的比较</strong><br>int compareTo(String)</p>
+<h2 id="StringBuffer">StringBuffer</h2><p>字符串缓冲区，是一个容器，长度是可变化的，可以直接操作多个数据类型。最终会通过toString变成字符串，可以：<br>C creat U update R read D detele</p>
+<ol>
+<li><p>存储<br>StringBuffer append()  将指定数据作为参数添加到已有数据的结尾处<br>StringBuffer insert(index,”数据”);将数据插入到index的后面</p>
+</li>
+<li><p>删除<br>StringBuffer detele(int start, int end) 删除缓冲区中的数据，包含头，不包含尾<br>StringBuffer deteleCharAt(index) 删除指定位置的字符</p>
+</li>
+<li><p>获取<br>char </p>
+</li>
+<li><p>修改(替换)<br>StringBuffer replace(int start, int end, String str)<br>void setCharAt(index,’字符’);</p>
+</li>
+<li><p>反转<br>StringBuffer reverse();</p>
+</li>
+</ol>
+<p>JDK1.5后出现了StringBuilder</p>
+<p>StringBuffer是线程同步<br>StringBuilder 是线程不同步，单线程用（提高效率）</p>
+<h2 id="基本数据类型对象包装类">基本数据类型对象包装类</h2><p>byte –&gt; Byte<br>short –&gt; Short<br>int –&gt; Integer<br>long –&gt; Long<br>boolean –&gt; Boolean<br>float –&gt; Float<br>double –&gt; Double<br>char –&gt; Character</p>
+<p>基本数据类型对象包装类的最常见作用，就是基本数据类型和字符串之前做转换<br>基本数据类型转成字符串</p>
+<p>基本数据类型＋””<br>基本数据类型.toString(基本数据类型值)</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Java/" rel="tag">#Java</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/TryCatch/" rel="prev">java中的异常(重点)</a>
+              <a href="/JavaSE/Collection/" rel="prev">集合框架 Collection</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaSE/extends/" rel="next">Java中的继承，聚集关系，final,抽象类，接口等</a>
+              <a href="/JDBC/aboutjdbc/" rel="next">jdbc的概述及简单的例子</a>
             
           </div>
         </div>
@@ -279,8 +295,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="JavaSE/Polymorphism/"
-                   data-title="Java中的多态" data-url="http://kuker.org/JavaSE/Polymorphism/">
+              <div class="ds-thread" data-thread-key="JavaSE/String/"
+                   data-title="String" data-url="http://kuker.org/JavaSE/String/">
               </div>
             
           </div>
@@ -362,7 +378,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objext类"><span class="nav-number">1.</span> <span class="nav-text">Objext类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串的操作方法(字符串的重点)"><span class="nav-number">1.</span> <span class="nav-text">字符串的操作方法(字符串的重点)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_获取"><span class="nav-number">1.1.</span> <span class="nav-text">1. 获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_判断"><span class="nav-number">1.2.</span> <span class="nav-text">2. 判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-转换"><span class="nav-number">1.3.</span> <span class="nav-text">3.转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_替换"><span class="nav-number">1.4.</span> <span class="nav-text">4. 替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_切割"><span class="nav-number">1.5.</span> <span class="nav-text">5. 切割</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_子串，获取字符串中的一部分"><span class="nav-number">2.</span> <span class="nav-text">6. 子串，获取字符串中的一部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-转换，去除空格，比较"><span class="nav-number">3.</span> <span class="nav-text">7.转换，去除空格，比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer"><span class="nav-number">4.</span> <span class="nav-text">StringBuffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型对象包装类"><span class="nav-number">5.</span> <span class="nav-text">基本数据类型对象包装类</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

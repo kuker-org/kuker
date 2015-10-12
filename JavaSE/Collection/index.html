@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="kuker,kuker.org,hexo" />
 
 
 
@@ -39,16 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="description" content="Collection-- List 元素是有序的，元素可以重复，因为该集合体系有索引	--- ArrayList	--- LinkedList	--- Vector-- Set 元素是无序的，元素不可以重复	--- HashSet	--- TreeSet
+Collecion 接口import java.util.*;/*1. add方法参数类型是object,以便接受任何类型的对象2. 集合中储存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的多态">
-<meta property="og:url" content="http://kuker.org/JavaSE/Polymorphism/index.html">
+<meta property="og:title" content="集合框架 Collection">
+<meta property="og:url" content="http://kuker.org/JavaSE/Collection/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="多态：可以理解为事物存在的多种形态。">
-<meta property="og:updated_time" content="2015-09-25T04:30:16.000Z">
+<meta property="og:description" content="Collection-- List 元素是有序的，元素可以重复，因为该集合体系有索引	--- ArrayList	--- LinkedList	--- Vector-- Set 元素是无序的，元素不可以重复	--- HashSet	--- TreeSet
+Collecion 接口import java.util.*;/*1. add方法参数类型是object,以便接受任何类型的对象2. 集合中储存">
+<meta property="og:updated_time" content="2015-10-09T03:31:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的多态">
-<meta name="twitter:description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="twitter:title" content="集合框架 Collection">
+<meta name="twitter:description" content="Collection-- List 元素是有序的，元素可以重复，因为该集合体系有索引	--- ArrayList	--- LinkedList	--- Vector-- Set 元素是无序的，元素不可以重复	--- HashSet	--- TreeSet
+Collecion 接口import java.util.*;/*1. add方法参数类型是object,以便接受任何类型的对象2. 集合中储存">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +61,7 @@
   };
 </script>
 
-  <title> Java中的多态 | KUKER </title>
+  <title> 集合框架 Collection | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +168,7 @@
           
           
             
-              Java中的多态
+              集合框架 Collection
             
           
         </h1>
@@ -174,34 +177,19 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-24T15:31:33+08:00" content="2015-09-24">
-            2015-09-24
+          <time itemprop="dateCreated" datetime="2015-10-09T10:13:25+08:00" content="2015-10-09">
+            2015-10-09
           </time>
         </span>
 
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                  <span itemprop="name">JavaSE</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
         
 
         
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/JavaSE/Polymorphism/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Polymorphism/" itemprop="commentsCount"></span>
+              <a href="/JavaSE/Collection/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Collection/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -215,46 +203,32 @@
       
 
       
-        <span itemprop="articleBody"><p>多态：可以理解为事物存在的多种形态。<br><a id="more"></a><br><strong>多态的体现</strong></p>
-<p>父类的引用指向了自己子类的对象<br>父类的引用也可以接受自己子类的对象</p>
-<p><strong>多态的前提</strong></p>
-<p>必须类与类之间有关系，要么继承，要么接口<br>通常还有一个前提，就是存在覆盖</p>
-<p><strong>多态的好处</strong></p>
-<p>大大提高了程序的扩展性</p>
-<p><strong>多态的弊端</strong></p>
-<p>提高了扩展型，但是只能使用父类的引用访问父类的成员。</p>
-<p><strong>多态的应用</strong></p>
-<p>Animal a = new Cat(); //类型提升向上转型</p>
-<p>如果要调用猫的特有方法，需要强制将父类的引用转成子类类型。<br>Cat c = (Cat) a;</p>
-<p><strong>在多态中成员函数的特点</strong></p>
-<p>在编译时期：参阅引用型变量所属的类中是否有调用的方法，如果有，编译通过。<br>在运行时期，参照对象所属的类中是否有调用的方法。</p>
-<h2 id="Objext类">Objext类</h2><p>每个类都使用作为超类。</p>
-<p><strong>equals(Object obj)</strong></p>
-<p>判断对象是否相等，如果自定义类中也有比较相同的功能，没有必要重新定义，只要沿袭父类中的功能，建立自己特有的比较内容就可以，这就是覆盖。</p>
+        <span itemprop="articleBody"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection</span><br><span class="line">-- List 元素是有序的，元素可以重复，因为该集合体系有索引</span><br><span class="line">	--- ArrayList</span><br><span class="line">	--- LinkedList</span><br><span class="line">	--- Vector</span><br><span class="line"></span><br><span class="line">-- Set 元素是无序的，元素不可以重复</span><br><span class="line">	--- HashSet</span><br><span class="line">	--- TreeSet</span><br></pre></td></tr></table></figure>
+<h2 id="Collecion_接口">Collecion 接口</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="comment">/*</span><br><span class="line">1. add方法参数类型是object,以便接受任何类型的对象</span><br><span class="line">2. 集合中储存的是对象引用</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CollectionDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//创建一个集合容器，使用Cllection接口的子类</span></span><br><span class="line">		ArrayList al = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//1. 添加元素</span></span><br><span class="line"></span><br><span class="line">		al.add(<span class="string">"java01"</span>);</span><br><span class="line">		al.add(<span class="string">"java02"</span>);</span><br><span class="line">		al.add(<span class="string">"java03"</span>);</span><br><span class="line">		al.add(<span class="string">"java04"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//2. 获取个数，集合长度</span></span><br><span class="line">		sop(<span class="string">"size:"</span> + al.size());</span><br><span class="line"></span><br><span class="line">		<span class="comment">//3. 打印集合</span></span><br><span class="line">		sop(al);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//4.删除元素</span></span><br><span class="line">		al.remove(<span class="string">"java02"</span>);</span><br><span class="line">		<span class="comment">//5 清空</span></span><br><span class="line">		al.clear(); <span class="comment">// isEmpty()就是true</span></span><br><span class="line">		<span class="comment">// 6. 判断元素</span></span><br><span class="line">		sop(<span class="string">"java03是否存在"</span>+ al.contains(<span class="string">"java03"</span>)); <span class="comment">//true代表存在</span></span><br><span class="line"></span><br><span class="line">		sop(<span class="string">"集合是否为空"</span> + al.isEmpty()); <span class="comment">//false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sop</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		System.out.println(obj);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>retainAll()  取交集</p>
+<p>什么是迭代器？<br>用于取出元素的方式。和遍历的方式差不多</p>
+<h2 id="List_接口">List 接口</h2><p>特有方法：凡是可以操作角标的方法都是特有的方法</p>
+<p>增<br> add(index,element)<br> addAll(index,Collection)</p>
+<p>删<br>remove(index)</p>
+<p>改<br>set(index,element)</p>
+<p>查 </p>
+<p>get(index)<br>subList(from, to)<br>listIterator();</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Java/" rel="tag">#Java</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/TryCatch/" rel="prev">java中的异常(重点)</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaSE/extends/" rel="next">Java中的继承，聚集关系，final,抽象类，接口等</a>
+              <a href="/JavaSE/String/" rel="next">String</a>
             
           </div>
         </div>
@@ -279,8 +253,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="JavaSE/Polymorphism/"
-                   data-title="Java中的多态" data-url="http://kuker.org/JavaSE/Polymorphism/">
+              <div class="ds-thread" data-thread-key="JavaSE/Collection/"
+                   data-title="集合框架 Collection" data-url="http://kuker.org/JavaSE/Collection/">
               </div>
             
           </div>
@@ -362,7 +336,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objext类"><span class="nav-number">1.</span> <span class="nav-text">Objext类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collecion_接口"><span class="nav-number">1.</span> <span class="nav-text">Collecion 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List_接口"><span class="nav-number">2.</span> <span class="nav-text">List 接口</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
