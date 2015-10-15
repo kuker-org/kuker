@@ -1,0 +1,628 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="kuker的网络笔记." />
+
+
+
+  <meta name="keywords" content="[object Object],html&css基础教程," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="主要内容：background, border,padding,margin,简单盒子模型，文本设置样式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一课：html&css2之常见标签">
+<meta property="og:url" content="http://kuker.org/JavaSE/htmlcss2Base/index.html">
+<meta property="og:site_name" content="KUKER">
+<meta property="og:description" content="主要内容：background, border,padding,margin,简单盒子模型，文本设置样式。">
+<meta property="og:image" content="http://7xly7h.com1.z0.glb.clouddn.com/屏幕快照%202015-10-15%20下午5.22.36.png">
+<meta property="og:image" content="http://7xly7h.com1.z0.glb.clouddn.com/盒子模型1.png">
+<meta property="og:image" content="http://7xly7h.com1.z0.glb.clouddn.com/盒子模型2.gif">
+<meta property="og:updated_time" content="2015-10-15T11:39:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一课：html&css2之常见标签">
+<meta name="twitter:description" content="主要内容：background, border,padding,margin,简单盒子模型，文本设置样式。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> 第一课：html&css2之常见标签 | KUKER </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">KUKER</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              第一课：html&css2之常见标签
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-15T19:34:10+08:00" content="2015-10-15">
+            2015-10-15
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/JavaSE/htmlcss2Base/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/htmlcss2Base/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>主要内容：background, border,padding,margin,简单盒子模型，文本设置样式。</p>
+<a id="more"></a>
+<h2 id="html+CSS的简单结构">html+CSS的简单结构</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span><br><span class="line">1.  photoshop常用的快捷键：</span><br><span class="line">    ctrl + c 复制</span><br><span class="line">    ctrl + v 粘贴</span><br><span class="line">    ctrl + n 新建</span><br><span class="line">    ctrl + s 保持</span><br><span class="line"></span><br><span class="line">    空格键 手抓工具</span><br><span class="line">    ctrl + t 自由变形</span><br><span class="line">    ctrl + 加号 放大</span><br><span class="line">    ctrl + 减号 缩小</span><br><span class="line">    ctrl + r 标尺</span><br><span class="line">    ctrl + alt + shift + s 存储为web格式</span><br><span class="line">    ctrl + alt + shift + e 盖印可见图层</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.  html    超文本标记语言(结构)</span><br><span class="line">    css     层叠样式表（样式）</span><br><span class="line">    javascript （行为）</span><br><span class="line"></span><br><span class="line"> --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="comment">&lt;!--     </span><br><span class="line">&lt;!DOCTYPE html&gt; －－ 声明文档类型</span><br><span class="line">    ! -  声明，注意</span><br><span class="line">    DOC -  文档</span><br><span class="line">    TYPE - 类型 </span><br><span class="line">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>html + css + javascript<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 代码编码格式，代码的编码格式要和文件的存储格式一致，页面才会显示正常 </span><br><span class="line">    代码编码格式：utf-8</span><br><span class="line">                gb2312</span><br><span class="line">                gbk</span><br><span class="line">    --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="comment">/*内部样式表 － 这是css的注释*/</span></span><br><span class="line">    <span class="id">#box</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">400px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;&#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 实际工作中用下面的样式表 －－导入外部样式表 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"/css/style.css"</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- REL(relationship - 关系)属性用于定义链接的文件和HTML文档之间的关系。 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 行间样式 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width:400px;height:200px;background:blue"</span>&gt;</span>块<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box"</span>&gt;</span>块<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="常见结构样式之_background">常见结构样式之 background</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>常见结构样式之 background<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="comment">/*</span><br><span class="line">    #名字 属性:属性值</span><br><span class="line">    width:宽度;</span><br><span class="line">    height:背景</span><br><span class="line">    background:背景;</span><br><span class="line">    */</span></span><br><span class="line">    <span class="id">#box</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">400px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="function">url</span>(banner.jpg) no-repeat <span class="number">10px</span> <span class="number">50px</span> red fixed</span></span>;</span><br><span class="line">        <span class="comment">/*  </span><br><span class="line">        首先像background有多少属性值：叫复合属性      </span><br><span class="line">        no-repeat 不重复</span><br><span class="line">        repeat-x 横向重复</span><br><span class="line">        repeat-y 纵向的重复</span><br><span class="line"></span><br><span class="line">        背景图位置的控制</span><br><span class="line">        10px(控制X轴，正数往右移动，负数往左移动)，也可以用方位词，如center(左右居中),也可以给x%</span><br><span class="line"></span><br><span class="line">        50px（控制Y轴，正数往下移动，负数往上移动),也可以用方向center(上下居中)</span><br><span class="line"></span><br><span class="line">        fixed 背景固定</span><br><span class="line"></span><br><span class="line">        上面的复合属性拆开写法：(通常不会像下面这么写，解析语言越短越好)</span><br><span class="line">        background-attachment:fixed; 背景是否滚动</span><br><span class="line">        background-color:red; 背景颜色</span><br><span class="line">        background-images:url(banner.jpg);  背景图片</span><br><span class="line">        background-repeat:no-repeat; 背景图是否重复</span><br><span class="line">        background-position:10px 50px; 背景图的位置</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="常见结构样式之_border">常见结构样式之 border</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>常见结构样式之 border<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="id">#box</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">400px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> dashed red</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">/*        </span><br><span class="line">        solid 实线</span><br><span class="line">        dashed 虚线</span><br><span class="line">        dotted 点线 (IE6不兼容,没有解决方案)</span><br><span class="line"></span><br><span class="line">        border复合属性由下面组成：</span><br><span class="line">        border-top-width: 1px;</span><br><span class="line">        border-right-width: 1px;</span><br><span class="line">        border-bottom-width: 1px;</span><br><span class="line">        border-left-width: 1px;</span><br><span class="line"></span><br><span class="line">        border-top-style: dashed;</span><br><span class="line">        border-right-style: dashed;</span><br><span class="line">        border-bottom-style: dashed;</span><br><span class="line">        border-left-style: dashed;</span><br><span class="line"></span><br><span class="line">        border-top-color: red;</span><br><span class="line">        border-right-color:red;</span><br><span class="line">        border-bottom-color:red;</span><br><span class="line">        border-left-color:red;</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="id">#box1</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">0px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">0</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border-top</span>:<span class="value"><span class="number">100px</span> solid red</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border-right</span>:<span class="value"><span class="number">100px</span> solid yellow</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"><span class="number">100px</span> solid green</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">border-left</span>:<span class="value"><span class="number">100px</span> solid blue</span></span>;</span><br><span class="line">    &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">#box1&#123;</span><br><span class="line">    width:0px;</span><br><span class="line">    height:0;</span><br><span class="line">    border-top:100px solid red;</span><br><span class="line">    border-right:100px solid yellow;</span><br><span class="line">    border-bottom:100px solid green;</span><br><span class="line">    border-left:100px solid blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xly7h.com1.z0.glb.clouddn.com/屏幕快照%202015-10-15%20下午5.22.36.png" alt="显示样式"></p>
+<h2 id="常见结构样式之_padding">常见结构样式之 padding</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>常见结构样式之 padding 内边距<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="id">#box</span><span class="rules">&#123;</span><br><span class="line">    	<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">240px</span></span></span>; <span class="comment">/*300px-30px-30px*/</span></span><br><span class="line">    	<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">140px</span></span></span>; <span class="comment">/*200px-30px-30px*/</span></span><br><span class="line">    	<span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid black</span></span>;</span><br><span class="line">    	<span class="comment">/*padding一定要遵循上 右 下 左 的顺序*/</span></span><br><span class="line">    	<span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">30px</span> <span class="number">30px</span> <span class="number">30px</span> <span class="number">30px</span></span></span>; </span><br><span class="line"></span><br><span class="line">    	<span class="comment">/*</span><br><span class="line">		上下左右都相同，可以像下面这样简写</span><br><span class="line">    	padding:30px;</span><br><span class="line"></span><br><span class="line">    	上下相通，或左右相同，可以像下面这样简写</span><br><span class="line">    	padding:30px(上下) 20px（右左）;</span><br><span class="line">		</span><br><span class="line">		下面的意思是：30px 30px 10px 30px;</span><br><span class="line">		上下相同，或左右相同，可以简写成一个。</span><br><span class="line">    	padding:30px 30px 10px;</span><br><span class="line"></span><br><span class="line">		也可以拆开写，如下：</span><br><span class="line">    	padding-top:30px;</span><br><span class="line">    	padding-right:30px;</span><br><span class="line">    	padding-bottom:30px;</span><br><span class="line">    	padding-left:30px;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">    	注意：padding相当于给盒子加了填充厚度，会影响盒子的大小，相当于给盒子加了内壁，而width和height是盒子内部的大小，不包含内壁，在计算宽高的时候要注意。</span><br><span class="line">    	*/</span></span><br><span class="line">    &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box"</span>&gt;</span>一位女教师在黑板上画了个苹果，问同学们：“这是什么？”结果，大家回答：“屁股！”女老师哭着找校长，校长十分生气，来到教室：“你们怎么把老师给气哭了？”又看了看黑板：“哟，你们还在黑板上画了个屁股！”<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="常见结构样式之_margin_外边距">常见结构样式之 margin 外边距</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>常见结构样式之 margin 外边距<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="comment">/*box1和box2是并行关系*/</span></span><br><span class="line">    <span class="id">#box1</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">300px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value">blue</span></span>;<span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">30px</span></span></span>;&#125;</span></span><br><span class="line">    <span class="id">#box2</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;<span class="comment">/*margin-top: 30px;*/</span>&#125;</span></span><br><span class="line">    <span class="comment">/*1. 上下外边距是会叠亚的，通常只设置一个盒子的外边距*/</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*box3和box4是嵌套关系*/</span></span><br><span class="line">    <span class="id">#box3</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">300px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value">blue</span></span>;<span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">100px</span></span></span>;&#125;</span></span><br><span class="line">    <span class="id">#box4</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value">red</span></span>;<span class="comment">/*margin-top: 100px;*/</span><span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">100px</span></span></span>;&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span><br><span class="line">        2. 父子级包含外边距的时候，子级的margin-top会传递给父级，也就是box4与box3上下之间不会有距离，而是box3距离上面的元素有100px的距离，要使box4与box3上下之间有距离，需要在父级中加padding－top:100px,也就是在box3中加padding-top.</span><br><span class="line"></span><br><span class="line">        注意：margin-left:100px;是可以的，不会传递给box3,这样写box4与box3之间会有100px的距离</span><br><span class="line"></span><br><span class="line">        注意：外边距的问题非常多，尽量不用，用父级的内边距代替子级的外边距。</span><br><span class="line">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="id">#box5</span><span class="rules">&#123;</span><br><span class="line">        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">background</span>:<span class="value">green</span></span>;</span><br><span class="line">        <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto <span class="number">0</span> auto</span></span>;</span><br><span class="line">        <span class="comment">/*</span><br><span class="line">        简写为：</span><br><span class="line">        margin:0 auto;可以始终居中。</span><br><span class="line">        外边距的复合：margin:上 右 下  左;</span><br><span class="line"></span><br><span class="line">        margin-left: auto;</span><br><span class="line">        margin-right: auto;</span><br><span class="line">        */</span></span><br><span class="line">    &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- box1和box2是并行关系 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- box3和box4是嵌套关系,box4的margin会传递给box3 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box3"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box4"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box5"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="盒子模型">盒子模型</h2><p><img src="http://7xly7h.com1.z0.glb.clouddn.com/盒子模型1.png" alt="盒子模型"></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">盒子宽度：左border + 左padding + width + 右padding + 右border</span><br><span class="line">盒子高度：上border + 上padding + height + 下padding + 下border</span><br><span class="line"></span><br><span class="line">盒子大小公式 ＝ border + padding + width / height</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xly7h.com1.z0.glb.clouddn.com/盒子模型2.gif" alt="盒子模型"></p>
+<h2 id="文本设置样式">文本设置样式</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>文本设置样式－ <span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">        <span class="id">#box</span><span class="rules">&#123;</span><br><span class="line">            <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">500px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">300px</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> solid black</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">90px</span> auto</span></span>;</span><br><span class="line"></span><br><span class="line">            <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">16px</span></span></span>; <span class="comment">/*中文文字大小用偶数，最小用12px*/</span></span><br><span class="line">            <span class="rule"><span class="attribute">font-family</span>:<span class="value"> 微软雅黑,宋体,airal</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">color</span>:<span class="value">blue</span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">30px</span></span></span>; </span><br><span class="line">            <span class="comment">/*</span><br><span class="line">            文字在行高的上下居中，文字是14px,那么文字上下各有(30px-16px)/2=7px;</span><br><span class="line"></span><br><span class="line">            用于导航条中：</span><br><span class="line">            设置文字在盒子中上下中间，只要行高和盒子的高度一样就可以</span><br><span class="line">            */</span></span><br><span class="line">            <span class="comment">/*text-align: center; 文字左右居中*/</span></span><br><span class="line">            <span class="rule"><span class="attribute">text-indent</span>:<span class="value"> <span class="number">2em</span></span></span>; <span class="comment">/*首行缩进，1em代表一个汉字，也可以是负数的值*/</span></span><br><span class="line">            <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> bold</span></span>; <span class="comment">/*文字加粗 - nomal,bold,boler --*/</span></span><br><span class="line">            <span class="rule"><span class="attribute">font-style</span>:<span class="value"> normal</span></span>; <span class="comment">/*文字样式*/</span></span><br><span class="line">            <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> line-through</span></span>; </span><br><span class="line">           <span class="comment">/* 文本修饰line-through / overline / underline /none*/</span></span><br><span class="line"></span><br><span class="line">           <span class="rule"><span class="attribute">letter-spacing</span>:<span class="value"> <span class="number">10px</span></span></span>; <span class="comment">/*字母间距，不常用*/</span></span><br><span class="line">           <span class="rule"><span class="attribute">word-spacing</span>:<span class="value"> <span class="number">10px</span></span></span>; <span class="comment">/*用于英文单词，以空格做解析，对于汉字没有效果*/</span></span><br><span class="line">        &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">    在楼下超市买了一瓶酒，觉得 i think 味道不对像假酒于是去找老板理论。老板很真诚地告诉我，以前买的都是假的，今天是315，为了过节特意卖给我一瓶真的……良心商家，感动常在！</span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结</h2><p><strong>常见复合属性</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">background:</span><br><span class="line">border:</span><br><span class="line">padding:</span><br><span class="line">margin:</span><br><span class="line">font: <span class="comment">&lt;!-- 整个用途不大 --&gt;</span></span><br></pre></td></tr></table></figure>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/object-Object/" rel="tag">#[object Object]</a>
+          
+            <a href="/tags/html-css基础教程/" rel="tag">#html&css基础教程</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaSE/Collection/" rel="next">集合框架 Collection</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="JavaSE/htmlcss2Base/"
+                   data-title="第一课：html&css2之常见标签" data-url="http://kuker.org/JavaSE/htmlcss2Base/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="Kuker Chou" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Kuker Chou</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">kuker的网络笔记.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html+CSS的简单结构"><span class="nav-number">1.</span> <span class="nav-text">html+CSS的简单结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见结构样式之_background"><span class="nav-number">2.</span> <span class="nav-text">常见结构样式之 background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见结构样式之_border"><span class="nav-number">3.</span> <span class="nav-text">常见结构样式之 border</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见结构样式之_padding"><span class="nav-number">4.</span> <span class="nav-text">常见结构样式之 padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见结构样式之_margin_外边距"><span class="nav-number">5.</span> <span class="nav-text">常见结构样式之 margin 外边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型"><span class="nav-number">6.</span> <span class="nav-text">盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本设置样式"><span class="nav-number">7.</span> <span class="nav-text">文本设置样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kuker Chou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kuker"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
