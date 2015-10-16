@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="kuker,kuker.org,hexo" />
 
 
 
@@ -39,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="description" content="float:left/right/none;overflow:hidden;vertical-align:top; 不能作用于浮动的元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的多态">
-<meta property="og:url" content="http://kuker.org/JavaSE/Polymorphism/index.html">
+<meta property="og:title" content="第三课：浮动，清浮动，浮动在IE6下常见问题解决">
+<meta property="og:url" content="http://kuker.org/JavaSE/cssfloat/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="多态：可以理解为事物存在的多种形态。">
-<meta property="og:updated_time" content="2015-09-25T04:30:16.000Z">
+<meta property="og:description" content="float:left/right/none;overflow:hidden;vertical-align:top; 不能作用于浮动的元素">
+<meta property="og:updated_time" content="2015-10-16T10:33:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java中的多态">
-<meta name="twitter:description" content="多态：可以理解为事物存在的多种形态。">
+<meta name="twitter:title" content="第三课：浮动，清浮动，浮动在IE6下常见问题解决">
+<meta name="twitter:description" content="float:left/right/none;overflow:hidden;vertical-align:top; 不能作用于浮动的元素">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +58,7 @@
   };
 </script>
 
-  <title> Java中的多态 | KUKER </title>
+  <title> 第三课：浮动，清浮动，浮动在IE6下常见问题解决 | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +165,7 @@
           
           
             
-              Java中的多态
+              第三课：浮动，清浮动，浮动在IE6下常见问题解决
             
           
         </h1>
@@ -174,34 +174,19 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-24T15:31:33+08:00" content="2015-09-24">
-            2015-09-24
+          <time itemprop="dateCreated" datetime="2015-10-16T18:31:16+08:00" content="2015-10-16">
+            2015-10-16
           </time>
         </span>
 
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                  <span itemprop="name">JavaSE</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
         
 
         
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/JavaSE/Polymorphism/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/Polymorphism/" itemprop="commentsCount"></span>
+              <a href="/JavaSE/cssfloat/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/cssfloat/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -215,46 +200,49 @@
       
 
       
-        <span itemprop="articleBody"><p>多态：可以理解为事物存在的多种形态。<br><a id="more"></a><br><strong>多态的体现</strong></p>
-<p>父类的引用指向了自己子类的对象<br>父类的引用也可以接受自己子类的对象</p>
-<p><strong>多态的前提</strong></p>
-<p>必须类与类之间有关系，要么继承，要么接口<br>通常还有一个前提，就是存在覆盖</p>
-<p><strong>多态的好处</strong></p>
-<p>大大提高了程序的扩展性</p>
-<p><strong>多态的弊端</strong></p>
-<p>提高了扩展型，但是只能使用父类的引用访问父类的成员。</p>
-<p><strong>多态的应用</strong></p>
-<p>Animal a = new Cat(); //类型提升向上转型</p>
-<p>如果要调用猫的特有方法，需要强制将父类的引用转成子类类型。<br>Cat c = (Cat) a;</p>
-<p><strong>在多态中成员函数的特点</strong></p>
-<p>在编译时期：参阅引用型变量所属的类中是否有调用的方法，如果有，编译通过。<br>在运行时期，参照对象所属的类中是否有调用的方法。</p>
-<h2 id="Objext类">Objext类</h2><p>每个类都使用作为超类。</p>
-<p><strong>equals(Object obj)</strong></p>
-<p>判断对象是否相等，如果自定义类中也有比较相同的功能，没有必要重新定义，只要沿袭父类中的功能，建立自己特有的比较内容就可以，这就是覆盖。</p>
+        <span itemprop="articleBody"><p>float:left/right/none;<br>overflow:hidden;<br>vertical-align:top; 不能作用于浮动的元素</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>浮动原理和清浮动(重要)<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">      <span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>; <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span></span>; <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">10px</span> solid <span class="hexcolor">#000</span></span></span>; <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;&#125;</span></span><br><span class="line">      <span class="class">.div</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>; <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;&#125;</span></span><br><span class="line"></span><br><span class="line">      <span class="class">.clear</span><span class="rules">&#123;<span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;&#125;</span>  <span class="comment">/*触发ie6,7下的haslayout*/</span></span><br><span class="line">      <span class="rule"><span class="attribute">.clear</span>:<span class="value">after&#123;content: <span class="string">""</span></span></span>; <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;<span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;&#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div"</span>&gt;</span> <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>overflow 溢出</strong><br>overflow: auto;  溢出显示滚动条,没有益处不显示滚动条<br>overflow: scroll; 默认显示滚动条<br>overflow: hidden;  溢出隐藏内容</p>
+<h2 id="清浮动">清浮动</h2><ol>
+<li>在父级加上float,但是每个父级都要加上去，很麻烦，而且无法居中。</li>
+<li>给浮动元素的父级加inline-block;</li>
+<li>在浮动元素下面加上<div class="clear"></div><br> .clear{font-size:0; clear: both;}} 但是会产生最小高度问题</li>
+<li>在浮动元素下面加上 <br clear="all"> （不符合w3c标准：结构样式分离）<br><strong>5. 大家都用的清浮动的方法<br>.clear{zoom:1;}<br>.clear:after{content: “”; display: block;clear: both;}</strong> 但是在IE6,7下不支持after伪类，所以用zoom:1来触发ie6,7下的haslayout，以解决清浮动问题。</li>
+<li>overflow也有清浮动的作用，要加下浮动元素的父级。该方法的问题是：在ie6下不行，如果要使用一定要配合zoom:1;同时对于采用下拉菜单的时候，会出现问题。</li>
+</ol>
+<h2 id="IE6下含浮动的常见bug">IE6下含浮动的常见bug</h2><ol>
+<li><p>ie6当div的高度小于19px时，会显示最小高度是19px,不完美解决办法1:设置font-size:0; (其实在ie6下，还是有2像素存在) <strong>好一点的解决办法</strong>用overflow:hidden;</p>
+</li>
+<li><p>在IE6，7下浮动元素的父级有宽度的话，就不用清浮动，因为宽度能触发ie6,7下引擎中的haslayout，当haslaylout运行了，就会根据元素内容的大小或者父级的大小来重新计算宽高。</p>
+</li>
+</ol>
+<p>3.在IE6，7下元素浮动要并在同一行的元素都要加浮动,否则内容距离左边会有几像素的空隙 </p>
+<ol>
+<li><p>IE6下<strong>块元素</strong>中同时出现横向的margin和float,横向的margin值会放大为两倍，解决办法就是将块元素转成内嵌display:inline;</p>
+</li>
+<li><p>ie6下的li中有浮动的问题,如下面代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="tag">span</span><span class="rules">&#123;<span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;&#125;</span>  </span><br><span class="line"><span class="tag">a</span><span class="rules">&#123;<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>;&#125;</span> 如果<span class="tag">a</span>不加浮动，在<span class="tag">ie6</span>下会出现"作者"换行的现象，所以要把<span class="tag">a</span>加浮动，记住在<span class="tag">ie6</span>下一定要把同一行的元素都加上浮动。</span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"list"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>第一行<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>作者<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>第二行<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">span</span>&gt;</span>作者<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IE下的li的3像素间隙问题。还是上面的代码，其中”第一行”和“第二行”之间在ie6下会有3个像素的间隙，原因是在ie6,7下<li>本身是没有浮动的，但是内容浮动了，所以会多出3px的间隙。<strong>解决办法:</strong> 第一种：可以给li加浮动和宽度，但是麻烦。<br>第二种：加vertical-align:top;(img同样有这个问题，所以css reset时就要让img加上vertical-align:top;)</li></p>
+</li>
+</ol>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Java/" rel="tag">#Java</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/TryCatch/" rel="prev">java中的异常(重点)</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaSE/extends/" rel="next">Java中的继承，聚集关系，final,抽象类，接口等</a>
+              <a href="/JavaSE/htmlcss2-2/" rel="next">第二课：html&css2之选择符</a>
             
           </div>
         </div>
@@ -279,8 +267,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="JavaSE/Polymorphism/"
-                   data-title="Java中的多态" data-url="http://kuker.org/JavaSE/Polymorphism/">
+              <div class="ds-thread" data-thread-key="JavaSE/cssfloat/"
+                   data-title="第三课：浮动，清浮动，浮动在IE6下常见问题解决" data-url="http://kuker.org/JavaSE/cssfloat/">
               </div>
             
           </div>
@@ -362,7 +350,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objext类"><span class="nav-number">1.</span> <span class="nav-text">Objext类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#清浮动"><span class="nav-number">1.</span> <span class="nav-text">清浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6下含浮动的常见bug"><span class="nav-number">2.</span> <span class="nav-text">IE6下含浮动的常见bug</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
