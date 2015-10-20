@@ -1,0 +1,655 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="kuker的网络笔记." />
+
+
+
+  <meta name="keywords" content="kuker,kuker.org,hexo" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="兼容性问题主要针对IE6，7，不过现在基本上已经淘汰了，装了win7系统的默认都是ie8以上了。大多数网站不用去考虑IE6,7. 不过常见的一些问题，在写代码的时候加1到2条语句能解决的，就直接加上好了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第六课：关于一些常见的兼容性问题">
+<meta property="og:url" content="http://kuker.org/JavaSE/ieproblem/index.html">
+<meta property="og:site_name" content="KUKER">
+<meta property="og:description" content="兼容性问题主要针对IE6，7，不过现在基本上已经淘汰了，装了win7系统的默认都是ie8以上了。大多数网站不用去考虑IE6,7. 不过常见的一些问题，在写代码的时候加1到2条语句能解决的，就直接加上好了。">
+<meta property="og:updated_time" content="2015-10-20T05:24:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第六课：关于一些常见的兼容性问题">
+<meta name="twitter:description" content="兼容性问题主要针对IE6，7，不过现在基本上已经淘汰了，装了win7系统的默认都是ie8以上了。大多数网站不用去考虑IE6,7. 不过常见的一些问题，在写代码的时候加1到2条语句能解决的，就直接加上好了。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> 第六课：关于一些常见的兼容性问题 | KUKER </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">KUKER</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              第六课：关于一些常见的兼容性问题
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-19T22:44:32+08:00" content="2015-10-19">
+            2015-10-19
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/JavaSE/ieproblem/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/ieproblem/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>兼容性问题主要针对IE6，7，不过现在基本上已经淘汰了，装了win7系统的默认都是ie8以上了。大多数网站不用去考虑IE6,7. 不过常见的一些问题，在写代码的时候加1到2条语句能解决的，就直接加上好了。</p>
+<a id="more"></a>
+<ol>
+<li><p>注意IE6下内容撑开父级的宽高，见下面的代码，下面代码在标准浏览器下没有问题，在IE6下蓝色的div会换行。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>兼容性<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">400px</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.left</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">300px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;<span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;&#125;</span></span><br><span class="line"><span class="class">.right</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;&#125;</span></span><br><span class="line"><span class="tag">IE6</span>下换行的原因是下面这句话，宽度180<span class="tag">px</span>;内边距宽15<span class="tag">px</span>;总宽=180+15+15=210<span class="tag">px</span>;而父级的宽度是200<span class="tag">px</span>;在</span><br><span class="line"><span class="tag">IE6</span>下内容会撑开父级的宽高，所以会换行。</span><br><span class="line">解决方案：计算宽高时要精确。</span><br><span class="line"></span><br><span class="line"><span class="class">.div</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">180px</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">180px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;<span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">15px</span></span></span>;&#125;</span> </span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"div"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元素浮动之后，能设置宽度的话，就给元素加宽度，在IE6下，元素浮动如果宽度需要被内容撑开，就给里面的块元素都加浮动。见下面代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>兼容性<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">400px</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.left</span><span class="rules">&#123;<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;<span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;&#125;</span></span><br><span class="line"><span class="class">.right</span><span class="rules">&#123;<span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>; <span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;&#125;</span></span><br><span class="line"></span><br><span class="line">如果<span class="tag">h3</span>不加浮动，在<span class="tag">IE6</span>下的宽度会变成100%的两行，不能做出红色块在左，绿色块在右，且宽度被内容撑开的形状。</span><br><span class="line"><span class="tag">h3</span><span class="rules">&#123;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">30px</span></span></span>;<span class="comment">/*float: left;*/</span>&#125;</span></span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">h3</span>&gt;</span>左侧<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">h3</span>&gt;</span>右侧<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在IE6，7下元素要通过浮动并在一行，就给整行元素都加上浮动，否则可能出现问题。（第一块元素浮动，第二块元素加margin值等于第一块元素，在IE6下会有3px的间隙问题）</p>
+</li>
+<li><p>iE6下元素的高度小于19px的时候，会被当作19px处理，解决方法用overflow:hidden;</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>兼容性<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">2px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;&#125;</span></span><br><span class="line">如果不加<span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;在<span class="tag">IE6</span>下的高度为19<span class="tag">px</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子元素的上下margin会传递给父级。解决方法，父级浮动，或者子级浮动。如果用border:1px solid #ccc;或者用overflow:hidden; 在标准浏览器下是可以的，在IE6下子元素的margin值会消失，解决方案是触发haslayout(zoom:1);</p>
+</li>
+</ol>
+<ol>
+<li><p>ie6,7下块标签不支持inline-block;</p>
+</li>
+<li><p>在ie6下，块元素有浮动和横向的margin,会产生双边距问题，解决办法：设置块元素为display:inline;</p>
+</li>
+<li><p>在IE6,7下,li本身没浮动，但是里面的内容浮动，li之间会产生间隙。解决方式：给li加vertical-align:top;</p>
+</li>
+<li><p>当iE6下最小高度问题和li的间隙共存的时候，给li加浮动和宽度＋over:hidden;。（用overtical:top + overflow:hidden;解决不了）</p>
+</li>
+</ol>
+<p>10.当一行子元素占有的宽度之和与父级的宽度超过3px,或者有不满行的状态的时候，最后一行子元素的下margin就会失效。</p>
+<ol>
+<li>IE6下的文字溢出bug,子元素的宽度和父级的宽度相差小于3px的时候，两个浮动元素中间有注释或者内嵌元素时出，解决方法：1.放大父级的宽度。2.将中间的注释和内嵌元素加个<div></div></li>
+</ol>
+<p>12.当浮动元素和绝对定位元素是并列关系的时候，在IE6下绝对定位会消失，解决办法：给绝对定位套div</p>
+<p>13.在IE6，7下子元素有相对定位的话，父级的overflow就包不住子元素。解决办法：给父级也加上相对定位。</p>
+<p>14.在IE6下绝对定位元素的父级宽高是奇数的时候，元素的right和bottom有1px的偏差。无法解决。</p>
+<p>15.在IE6,7下输入类型的表单控件上下各有1px的间隙，解决方法：给input加上浮动。</p>
+<p>16.在ie6,7下输入类型的表单控件加border:none无效，解决办法：重置input的背景。</p>
+<p>17.在ie6,7下输入类型的表单控件输入文字的时候，背景图片会损者文字移动，解决方案：给父级加背景</p>
+<p>18.处理IE6下png不能显示问题.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">* file_name: DD_belatedPNG_0.0.8a.js;</span><br><span class="line">* DD_belatedPNG: Adds IE6 support: PNG images for CSS background-image and HTML &lt;IMG/&gt;.</span><br><span class="line">* Author: Drew Diller</span><br><span class="line">* Email: drew.diller@gmail.com</span><br><span class="line">* URL: http://www.dillerdesign.com/experiment/DD_belatedPNG/</span><br><span class="line">* Version: 0.0.8a</span><br><span class="line">* Licensed under the MIT License: http://dillerdesign.com/experiment/DD_belatedPNG/#license</span><br><span class="line">*</span><br><span class="line">* Example usage:</span><br><span class="line">* DD_belatedPNG.fix('.png_bg'); // argument is a CSS selector</span><br><span class="line">* DD_belatedPNG.fixPng( someNode ); // argument is an HTMLDomElement</span><br><span class="line">**/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">PLEASE READ:</span><br><span class="line">Absolutely everything in this script is SILLY.  I know this.  IE's rendering of certain pixels doesn't make sense, so neither does this code!</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> DD_belatedPNG = &#123;</span><br><span class="line">	ns: <span class="string">'DD_belatedPNG'</span>,</span><br><span class="line">	imgSize: &#123;&#125;,</span><br><span class="line">	delay: <span class="number">10</span>,</span><br><span class="line">	nodesFixed: <span class="number">0</span>,</span><br><span class="line">	createVmlNameSpace: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* enable VML */</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">document</span>.namespaces &amp;&amp; !<span class="built_in">document</span>.namespaces[<span class="keyword">this</span>.ns]) &#123;</span><br><span class="line">			<span class="built_in">document</span>.namespaces.add(<span class="keyword">this</span>.ns, <span class="string">'urn:schemas-microsoft-com:vml'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	createVmlStyleSheet: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* style VML, enable behaviors */</span></span><br><span class="line">		<span class="comment">/*</span><br><span class="line">			Just in case lots of other developers have added</span><br><span class="line">			lots of other stylesheets using document.createStyleSheet</span><br><span class="line">			and hit the 31-limit mark, let's not use that method!</span><br><span class="line">			further reading: http://msdn.microsoft.com/en-us/library/ms531194(VS.85).aspx</span><br><span class="line">		*/</span></span><br><span class="line">		<span class="keyword">var</span> screenStyleSheet, printStyleSheet;</span><br><span class="line">		screenStyleSheet = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>);</span><br><span class="line">		screenStyleSheet.setAttribute(<span class="string">'media'</span>, <span class="string">'screen'</span>);</span><br><span class="line">		<span class="built_in">document</span>.documentElement.firstChild.insertBefore(screenStyleSheet, <span class="built_in">document</span>.documentElement.firstChild.firstChild);</span><br><span class="line">		<span class="keyword">if</span> (screenStyleSheet.styleSheet) &#123;</span><br><span class="line">			screenStyleSheet = screenStyleSheet.styleSheet;</span><br><span class="line">			screenStyleSheet.addRule(<span class="keyword">this</span>.ns + <span class="string">'\\:*'</span>, <span class="string">'&#123;behavior:url(#default#VML)&#125;'</span>);</span><br><span class="line">			screenStyleSheet.addRule(<span class="keyword">this</span>.ns + <span class="string">'\\:shape'</span>, <span class="string">'position:absolute;'</span>);</span><br><span class="line">			screenStyleSheet.addRule(<span class="string">'img.'</span> + <span class="keyword">this</span>.ns + <span class="string">'_sizeFinder'</span>, <span class="string">'behavior:none; border:none; position:absolute; z-index:-1; top:-10000px; visibility:hidden;'</span>); <span class="comment">/* large negative top value for avoiding vertical scrollbars for large images, suggested by James O'Brien, http://www.thanatopsic.org/hendrik/ */</span></span><br><span class="line">			<span class="keyword">this</span>.screenStyleSheet = screenStyleSheet;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">/* Add a print-media stylesheet, for preventing VML artifacts from showing up in print (including preview). */</span></span><br><span class="line">			<span class="comment">/* Thanks to Rémi Prévost for automating this! */</span></span><br><span class="line">			printStyleSheet = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>);</span><br><span class="line">			printStyleSheet.setAttribute(<span class="string">'media'</span>, <span class="string">'print'</span>);</span><br><span class="line">			<span class="built_in">document</span>.documentElement.firstChild.insertBefore(printStyleSheet, <span class="built_in">document</span>.documentElement.firstChild.firstChild);</span><br><span class="line">			printStyleSheet = printStyleSheet.styleSheet;</span><br><span class="line">			printStyleSheet.addRule(<span class="keyword">this</span>.ns + <span class="string">'\\:*'</span>, <span class="string">'&#123;display: none !important;&#125;'</span>);</span><br><span class="line">			printStyleSheet.addRule(<span class="string">'img.'</span> + <span class="keyword">this</span>.ns + <span class="string">'_sizeFinder'</span>, <span class="string">'&#123;display: none !important;&#125;'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	readPropertyChange: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> el, display, v;</span><br><span class="line">		el = event.srcElement;</span><br><span class="line">		<span class="keyword">if</span> (!el.vmlInitiated) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (event.propertyName.search(<span class="string">'background'</span>) != -<span class="number">1</span> || event.propertyName.search(<span class="string">'border'</span>) != -<span class="number">1</span>) &#123;</span><br><span class="line">			DD_belatedPNG.applyVML(el);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (event.propertyName == <span class="string">'style.display'</span>) &#123;</span><br><span class="line">			display = (el.currentStyle.display == <span class="string">'none'</span>) ? <span class="string">'none'</span> : <span class="string">'block'</span>;</span><br><span class="line">			<span class="keyword">for</span> (v <span class="keyword">in</span> el.vml) &#123;</span><br><span class="line">				<span class="keyword">if</span> (el.vml.hasOwnProperty(v)) &#123;</span><br><span class="line">					el.vml[v].shape.style.display = display;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (event.propertyName.search(<span class="string">'filter'</span>) != -<span class="number">1</span>) &#123;</span><br><span class="line">			DD_belatedPNG.vmlOpacity(el);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	vmlOpacity: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (el.currentStyle.filter.search(<span class="string">'lpha'</span>) != -<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">var</span> trans = el.currentStyle.filter;</span><br><span class="line">			trans = <span class="built_in">parseInt</span>(trans.substring(trans.lastIndexOf(<span class="string">'='</span>)+<span class="number">1</span>, trans.lastIndexOf(<span class="string">')'</span>)), <span class="number">10</span>)/<span class="number">100</span>;</span><br><span class="line">			el.vml.color.shape.style.filter = el.currentStyle.filter; <span class="comment">/* complete guesswork */</span></span><br><span class="line">			el.vml.image.fill.opacity = trans; <span class="comment">/* complete guesswork */</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	handlePseudoHover: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* wouldn't work as intended without setTimeout */</span></span><br><span class="line">			DD_belatedPNG.applyVML(el);</span><br><span class="line">		&#125;, <span class="number">1</span>);</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	* This is the method to use in a document.</span><br><span class="line">	* @param &#123;String&#125; selector - REQUIRED - a CSS selector, such as '#doc .container'</span><br><span class="line">	**/</span></span><br><span class="line">	fix: <span class="function"><span class="keyword">function</span> (<span class="params">selector</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.screenStyleSheet) &#123;</span><br><span class="line">			<span class="keyword">var</span> selectors, i;</span><br><span class="line">			selectors = selector.split(<span class="string">','</span>); <span class="comment">/* multiple selectors supported, no need for multiple calls to this anymore */</span></span><br><span class="line">			<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;selectors.length; i++) &#123;</span><br><span class="line">				<span class="keyword">this</span>.screenStyleSheet.addRule(selectors[i], <span class="string">'behavior:expression(DD_belatedPNG.fixPng(this))'</span>); <span class="comment">/* seems to execute the function without adding it to the stylesheet - interesting... */</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	applyVML: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		el.runtimeStyle.cssText = <span class="string">''</span>;</span><br><span class="line">		<span class="keyword">this</span>.vmlFill(el);</span><br><span class="line">		<span class="keyword">this</span>.vmlOffsets(el);</span><br><span class="line">		<span class="keyword">this</span>.vmlOpacity(el);</span><br><span class="line">		<span class="keyword">if</span> (el.isImg) &#123;</span><br><span class="line">			<span class="keyword">this</span>.copyImageBorders(el);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	attachHandlers: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> self, handlers, handler, moreForAs, a, h;</span><br><span class="line">		self = <span class="keyword">this</span>;</span><br><span class="line">		handlers = &#123;resize: <span class="string">'vmlOffsets'</span>, move: <span class="string">'vmlOffsets'</span>&#125;;</span><br><span class="line">		<span class="keyword">if</span> (el.nodeName == <span class="string">'A'</span>) &#123;</span><br><span class="line">			moreForAs = &#123;mouseleave: <span class="string">'handlePseudoHover'</span>, mouseenter: <span class="string">'handlePseudoHover'</span>, focus: <span class="string">'handlePseudoHover'</span>, blur: <span class="string">'handlePseudoHover'</span>&#125;;</span><br><span class="line">			<span class="keyword">for</span> (a <span class="keyword">in</span> moreForAs) &#123;			</span><br><span class="line">				<span class="keyword">if</span> (moreForAs.hasOwnProperty(a)) &#123;</span><br><span class="line">					handlers[a] = moreForAs[a];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (h <span class="keyword">in</span> handlers) &#123;</span><br><span class="line">			<span class="keyword">if</span> (handlers.hasOwnProperty(h)) &#123;</span><br><span class="line">				handler = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">					self[handlers[h]](el);</span><br><span class="line">				&#125;;</span><br><span class="line">				el.attachEvent(<span class="string">'on'</span> + h, handler);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		el.attachEvent(<span class="string">'onpropertychange'</span>, <span class="keyword">this</span>.readPropertyChange);</span><br><span class="line">	&#125;,</span><br><span class="line">	giveLayout: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		el.style.zoom = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (el.currentStyle.position == <span class="string">'static'</span>) &#123;</span><br><span class="line">			el.style.position = <span class="string">'relative'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	copyImageBorders: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> styles, s;</span><br><span class="line">		styles = &#123;<span class="string">'borderStyle'</span>:<span class="literal">true</span>, <span class="string">'borderWidth'</span>:<span class="literal">true</span>, <span class="string">'borderColor'</span>:<span class="literal">true</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span> (s <span class="keyword">in</span> styles) &#123;</span><br><span class="line">			<span class="keyword">if</span> (styles.hasOwnProperty(s)) &#123;</span><br><span class="line">				el.vml.color.shape.style[s] = el.currentStyle[s];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	vmlFill: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!el.currentStyle) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">var</span> elStyle, noImg, lib, v, img, imgLoaded;</span><br><span class="line">			elStyle = el.currentStyle;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (v <span class="keyword">in</span> el.vml) &#123;</span><br><span class="line">			<span class="keyword">if</span> (el.vml.hasOwnProperty(v)) &#123;</span><br><span class="line">				el.vml[v].shape.style.zIndex = elStyle.zIndex;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		el.runtimeStyle.backgroundColor = <span class="string">''</span>;</span><br><span class="line">		el.runtimeStyle.backgroundImage = <span class="string">''</span>;</span><br><span class="line">		noImg = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (elStyle.backgroundImage != <span class="string">'none'</span> || el.isImg) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!el.isImg) &#123;</span><br><span class="line">				el.vmlBg = elStyle.backgroundImage;</span><br><span class="line">				el.vmlBg = el.vmlBg.substr(<span class="number">5</span>, el.vmlBg.lastIndexOf(<span class="string">'")'</span>)-<span class="number">5</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				el.vmlBg = el.src;</span><br><span class="line">			&#125;</span><br><span class="line">			lib = <span class="keyword">this</span>;</span><br><span class="line">			<span class="keyword">if</span> (!lib.imgSize[el.vmlBg]) &#123; <span class="comment">/* determine size of loaded image */</span></span><br><span class="line">				img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line">				lib.imgSize[el.vmlBg] = img;</span><br><span class="line">				img.className = lib.ns + <span class="string">'_sizeFinder'</span>;</span><br><span class="line">				img.runtimeStyle.cssText = <span class="string">'behavior:none; position:absolute; left:-10000px; top:-10000px; border:none; margin:0; padding:0;'</span>; <span class="comment">/* make sure to set behavior to none to prevent accidental matching of the helper elements! */</span></span><br><span class="line">				imgLoaded = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">					<span class="keyword">this</span>.width = <span class="keyword">this</span>.offsetWidth; <span class="comment">/* weird cache-busting requirement! */</span></span><br><span class="line">					<span class="keyword">this</span>.height = <span class="keyword">this</span>.offsetHeight;</span><br><span class="line">					lib.vmlOffsets(el);</span><br><span class="line">				&#125;;</span><br><span class="line">				img.attachEvent(<span class="string">'onload'</span>, imgLoaded);</span><br><span class="line">				img.src = el.vmlBg;</span><br><span class="line">				img.removeAttribute(<span class="string">'width'</span>);</span><br><span class="line">				img.removeAttribute(<span class="string">'height'</span>);</span><br><span class="line">				<span class="built_in">document</span>.body.insertBefore(img, <span class="built_in">document</span>.body.firstChild);</span><br><span class="line">			&#125;</span><br><span class="line">			el.vml.image.fill.src = el.vmlBg;</span><br><span class="line">			noImg = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		el.vml.image.fill.on = !noImg;</span><br><span class="line">		el.vml.image.fill.color = <span class="string">'none'</span>;</span><br><span class="line">		el.vml.color.shape.style.backgroundColor = elStyle.backgroundColor;</span><br><span class="line">		el.runtimeStyle.backgroundImage = <span class="string">'none'</span>;</span><br><span class="line">		el.runtimeStyle.backgroundColor = <span class="string">'transparent'</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">/* IE can't figure out what do when the offsetLeft and the clientLeft add up to 1, and the VML ends up getting fuzzy... so we have to push/enlarge things by 1 pixel and then clip off the excess */</span></span><br><span class="line">	vmlOffsets: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> thisStyle, size, fudge, makeVisible, bg, bgR, dC, altC, b, c, v;</span><br><span class="line">		thisStyle = el.currentStyle;</span><br><span class="line">		size = &#123;<span class="string">'W'</span>:el.clientWidth+<span class="number">1</span>, <span class="string">'H'</span>:el.clientHeight+<span class="number">1</span>, <span class="string">'w'</span>:<span class="keyword">this</span>.imgSize[el.vmlBg].width, <span class="string">'h'</span>:<span class="keyword">this</span>.imgSize[el.vmlBg].height, <span class="string">'L'</span>:el.offsetLeft, <span class="string">'T'</span>:el.offsetTop, <span class="string">'bLW'</span>:el.clientLeft, <span class="string">'bTW'</span>:el.clientTop&#125;;</span><br><span class="line">		fudge = (size.L + size.bLW == <span class="number">1</span>) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">		<span class="comment">/* vml shape, left, top, width, height, origin */</span></span><br><span class="line">		makeVisible = <span class="function"><span class="keyword">function</span> (<span class="params">vml, l, t, w, h, o</span>) </span>&#123;</span><br><span class="line">			vml.coordsize = w+<span class="string">','</span>+h;</span><br><span class="line">			vml.coordorigin = o+<span class="string">','</span>+o;</span><br><span class="line">			vml.path = <span class="string">'m0,0l'</span>+w+<span class="string">',0l'</span>+w+<span class="string">','</span>+h+<span class="string">'l0,'</span>+h+<span class="string">' xe'</span>;</span><br><span class="line">			vml.style.width = w + <span class="string">'px'</span>;</span><br><span class="line">			vml.style.height = h + <span class="string">'px'</span>;</span><br><span class="line">			vml.style.left = l + <span class="string">'px'</span>;</span><br><span class="line">			vml.style.top = t + <span class="string">'px'</span>;</span><br><span class="line">		&#125;;</span><br><span class="line">		makeVisible(el.vml.color.shape, (size.L + (el.isImg ? <span class="number">0</span> : size.bLW)), (size.T + (el.isImg ? <span class="number">0</span> : size.bTW)), (size.W-<span class="number">1</span>), (size.H-<span class="number">1</span>), <span class="number">0</span>);</span><br><span class="line">		makeVisible(el.vml.image.shape, (size.L + size.bLW), (size.T + size.bTW), (size.W), (size.H), <span class="number">1</span> );</span><br><span class="line">		bg = &#123;<span class="string">'X'</span>:<span class="number">0</span>, <span class="string">'Y'</span>:<span class="number">0</span>&#125;;</span><br><span class="line">		<span class="keyword">if</span> (el.isImg) &#123;</span><br><span class="line">			bg.X = <span class="built_in">parseInt</span>(thisStyle.paddingLeft, <span class="number">10</span>) + <span class="number">1</span>;</span><br><span class="line">			bg.Y = <span class="built_in">parseInt</span>(thisStyle.paddingTop, <span class="number">10</span>) + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">for</span> (b <span class="keyword">in</span> bg) &#123;</span><br><span class="line">				<span class="keyword">if</span> (bg.hasOwnProperty(b)) &#123;</span><br><span class="line">					<span class="keyword">this</span>.figurePercentage(bg, size, b, thisStyle[<span class="string">'backgroundPosition'</span>+b]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		el.vml.image.fill.position = (bg.X/size.W) + <span class="string">','</span> + (bg.Y/size.H);</span><br><span class="line">		bgR = thisStyle.backgroundRepeat;</span><br><span class="line">		dC = &#123;<span class="string">'T'</span>:<span class="number">1</span>, <span class="string">'R'</span>:size.W+fudge, <span class="string">'B'</span>:size.H, <span class="string">'L'</span>:<span class="number">1</span>+fudge&#125;; <span class="comment">/* these are defaults for repeat of any kind */</span></span><br><span class="line">		altC = &#123; <span class="string">'X'</span>: &#123;<span class="string">'b1'</span>: <span class="string">'L'</span>, <span class="string">'b2'</span>: <span class="string">'R'</span>, <span class="string">'d'</span>: <span class="string">'W'</span>&#125;, <span class="string">'Y'</span>: &#123;<span class="string">'b1'</span>: <span class="string">'T'</span>, <span class="string">'b2'</span>: <span class="string">'B'</span>, <span class="string">'d'</span>: <span class="string">'H'</span>&#125; &#125;;</span><br><span class="line">		<span class="keyword">if</span> (bgR != <span class="string">'repeat'</span> || el.isImg) &#123;</span><br><span class="line">			c = &#123;<span class="string">'T'</span>:(bg.Y), <span class="string">'R'</span>:(bg.X+size.w), <span class="string">'B'</span>:(bg.Y+size.h), <span class="string">'L'</span>:(bg.X)&#125;; <span class="comment">/* these are defaults for no-repeat - clips down to the image location */</span></span><br><span class="line">			<span class="keyword">if</span> (bgR.search(<span class="string">'repeat-'</span>) != -<span class="number">1</span>) &#123; <span class="comment">/* now let's revert to dC for repeat-x or repeat-y */</span></span><br><span class="line">				v = bgR.split(<span class="string">'repeat-'</span>)[<span class="number">1</span>].toUpperCase();</span><br><span class="line">				c[altC[v].b1] = <span class="number">1</span>;</span><br><span class="line">				c[altC[v].b2] = size[altC[v].d];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (c.B &gt; size.H) &#123;</span><br><span class="line">				c.B = size.H;</span><br><span class="line">			&#125;</span><br><span class="line">			el.vml.image.shape.style.clip = <span class="string">'rect('</span>+c.T+<span class="string">'px '</span>+(c.R+fudge)+<span class="string">'px '</span>+c.B+<span class="string">'px '</span>+(c.L+fudge)+<span class="string">'px)'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			el.vml.image.shape.style.clip = <span class="string">'rect('</span>+dC.T+<span class="string">'px '</span>+dC.R+<span class="string">'px '</span>+dC.B+<span class="string">'px '</span>+dC.L+<span class="string">'px)'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	figurePercentage: <span class="function"><span class="keyword">function</span> (<span class="params">bg, size, axis, position</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> horizontal, fraction;</span><br><span class="line">		fraction = <span class="literal">true</span>;</span><br><span class="line">		horizontal = (axis == <span class="string">'X'</span>);</span><br><span class="line">		<span class="keyword">switch</span>(position) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'left'</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'top'</span>:</span><br><span class="line">				bg[axis] = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'center'</span>:</span><br><span class="line">				bg[axis] = <span class="number">0.5</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'right'</span>:</span><br><span class="line">			<span class="keyword">case</span> <span class="string">'bottom'</span>:</span><br><span class="line">				bg[axis] = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="keyword">if</span> (position.search(<span class="string">'%'</span>) != -<span class="number">1</span>) &#123;</span><br><span class="line">					bg[axis] = <span class="built_in">parseInt</span>(position, <span class="number">10</span>) / <span class="number">100</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					fraction = <span class="literal">false</span>;</span><br><span class="line">				&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		bg[axis] = <span class="built_in">Math</span>.ceil(  fraction ? ( (size[horizontal?<span class="string">'W'</span>: <span class="string">'H'</span>] * bg[axis]) - (size[horizontal?<span class="string">'w'</span>: <span class="string">'h'</span>] * bg[axis]) ) : <span class="built_in">parseInt</span>(position, <span class="number">10</span>)  );</span><br><span class="line">		<span class="keyword">if</span> (bg[axis] % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">			bg[axis]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> bg[axis];</span><br><span class="line">	&#125;,</span><br><span class="line">	fixPng: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">		el.style.behavior = <span class="string">'none'</span>;</span><br><span class="line">		<span class="keyword">var</span> lib, els, nodeStr, v, e;</span><br><span class="line">		<span class="keyword">if</span> (el.nodeName == <span class="string">'BODY'</span> || el.nodeName == <span class="string">'TD'</span> || el.nodeName == <span class="string">'TR'</span>) &#123; <span class="comment">/* elements not supported yet */</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		el.isImg = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">if</span> (el.nodeName == <span class="string">'IMG'</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(el.src.toLowerCase().search(<span class="regexp">/\.png$/</span>) != -<span class="number">1</span>) &#123;</span><br><span class="line">				el.isImg = <span class="literal">true</span>;</span><br><span class="line">				el.style.visibility = <span class="string">'hidden'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (el.currentStyle.backgroundImage.toLowerCase().search(<span class="string">'.png'</span>) == -<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		lib = DD_belatedPNG;</span><br><span class="line">		el.vml = &#123;color: &#123;&#125;, image: &#123;&#125;&#125;;</span><br><span class="line">		els = &#123;shape: &#123;&#125;, fill: &#123;&#125;&#125;;</span><br><span class="line">		<span class="keyword">for</span> (v <span class="keyword">in</span> el.vml) &#123;</span><br><span class="line">			<span class="keyword">if</span> (el.vml.hasOwnProperty(v)) &#123;</span><br><span class="line">				<span class="keyword">for</span> (e <span class="keyword">in</span> els) &#123;</span><br><span class="line">					<span class="keyword">if</span> (els.hasOwnProperty(e)) &#123;</span><br><span class="line">						nodeStr = lib.ns + <span class="string">':'</span> + e;</span><br><span class="line">						el.vml[v][e] = <span class="built_in">document</span>.createElement(nodeStr);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				el.vml[v].shape.stroked = <span class="literal">false</span>;</span><br><span class="line">				el.vml[v].shape.appendChild(el.vml[v].fill);</span><br><span class="line">				el.parentNode.insertBefore(el.vml[v].shape, el);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		el.vml.image.shape.fillcolor = <span class="string">'none'</span>; <span class="comment">/* Don't show blank white shapeangle when waiting for image to load. */</span></span><br><span class="line">		el.vml.image.fill.type = <span class="string">'tile'</span>; <span class="comment">/* Makes image show up. */</span></span><br><span class="line">		el.vml.color.fill.on = <span class="literal">false</span>; <span class="comment">/* Actually going to apply vml element's style.backgroundColor, so hide the whiteness. */</span></span><br><span class="line">		lib.attachHandlers(el);</span><br><span class="line">		lib.giveLayout(el);</span><br><span class="line">		lib.giveLayout(el.offsetParent);</span><br><span class="line">		el.vmlInitiated = <span class="literal">true</span>;</span><br><span class="line">		lib.applyVML(el); <span class="comment">/* Render! */</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="built_in">document</span>.execCommand(<span class="string">"BackgroundImageCache"</span>, <span class="literal">false</span>, <span class="literal">true</span>); <span class="comment">/* TredoSoft Multiple IE doesn't like this, so try&#123;&#125; it */</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(r) &#123;&#125;</span><br><span class="line">DD_belatedPNG.createVmlNameSpace();</span><br><span class="line">DD_belatedPNG.createVmlStyleSheet();</span><br></pre></td></tr></table></figure>
+<p><strong>如何使用DD_belatedPNG_0.0.8a.js</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">	<span class="class">.box</span><span class="rules">&#123;<span class="rule"><span class="attribute">background</span>:<span class="value"><span class="function">url</span>(img/png.png)</span></span>;&#125;</span></span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/DD_belatedPNG_0.0.8a.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript"></span><br><span class="line">	DD_belatedPNG.fix(<span class="string">'.box'</span>);</span><br><span class="line">	</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>IE下专属的条件注释语句</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if IE]--&gt;</span></span><br><span class="line">这是IE</span><br><span class="line"><span class="comment">&lt;!--[endif]--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if IE 6]--&gt;</span></span><br><span class="line">IE6下显示这个</span><br><span class="line"><span class="comment">&lt;!--[endif]--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if IE 7]--&gt;</span></span><br><span class="line">IE7下显示这个</span><br><span class="line"><span class="comment">&lt;!--[endif]--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if IE 8]--&gt;</span></span><br><span class="line">IE8下显示这个</span><br><span class="line"><span class="comment">&lt;!--[endif]--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--[if IE 9]--&gt;</span></span><br><span class="line">IE9下显示这个</span><br><span class="line"><span class="comment">&lt;!--[endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>提升样式优先级 !important; 这个在IE6下有个问题，在!important后加同样的样式会按照默认的优先级显示。</li>
+</ol>
+<h2 id="圣杯布局（双飞翼布局）">圣杯布局（双飞翼布局）</h2><p>左右宽度固定，中间宽度自适应伸缩；并且中间先加载。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>圣杯布局<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="tag">body</span><span class="rules">&#123;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.center</span><span class="rules">&#123;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f60</span></span></span>;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">200px</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.left</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#fc0</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;<span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0</span></span></span>;<span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">0</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.right</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">600px</span></span></span>;<span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;<span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span></span>;&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"center"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="等高布局">等高布局</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="doctype">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>等高布局<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="tag">body</span><span class="rules">&#123;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.wrap</span><span class="rules">&#123; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">900px</span></span></span>;<span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span></span>;<span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;&#125;</span></span><br><span class="line"><span class="class">.left</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;<span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;<span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">10000px</span></span></span>;<span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">10000px</span></span></span>;&#125;</span></span><br><span class="line"><span class="class">.right</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">700px</span></span></span>;<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;<span class="rule"><span class="attribute">float</span>:<span class="value"> right</span></span>;<span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">10000px</span></span></span>;<span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> -<span class="number">10000px</span></span></span>;&#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"wrap"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"left"</span>&gt;</span></span><br><span class="line">		&amp;nbsp;&amp;nbsp;页面内容<span class="tag">&lt;<span class="title">br</span> /&gt;</span></span><br><span class="line">		&amp;nbsp;&amp;nbsp;页面内容<span class="tag">&lt;<span class="title">br</span> /&gt;</span></span><br><span class="line">		&amp;nbsp;&amp;nbsp;页面内容<span class="tag">&lt;<span class="title">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"right"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/JavaSE/othercss/" rel="prev">第七课：html&css2 其它的元素</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/JavaSE/table/" rel="next">第五课：表格表单（到这里html&css2基础完结，画页面没什么问题了）</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="JavaSE/ieproblem/"
+                   data-title="第六课：关于一些常见的兼容性问题" data-url="http://kuker.org/JavaSE/ieproblem/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="Kuker Chou" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Kuker Chou</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">kuker的网络笔记.</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#圣杯布局（双飞翼布局）"><span class="nav-number">1.</span> <span class="nav-text">圣杯布局（双飞翼布局）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等高布局"><span class="nav-number">2.</span> <span class="nav-text">等高布局</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kuker Chou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kuker"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
