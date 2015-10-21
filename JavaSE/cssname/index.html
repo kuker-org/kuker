@@ -39,16 +39,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="热区	&amp;lt;img src=&quot;bigptr.jpg&quot; usemap=&quot;#Map&quot;/&amp;gt;	&amp;lt;map name=&quot;Map&quot;&amp;gt;		&amp;lt;area shape=&quot;circle&quot; coords=&quot;378,132,56&quot; href=&quot;#&quot;&amp;gt;	&amp;lt;/map&amp;gt;	&amp;lt;map name=&quot;Map&quot;&amp;gt;		&amp;lt;area shape=&quot;rect&quot; coords=&quot;462,1">
+<meta name="description" content="命名：根据每块元素的主题 或者功能、在页面上的位置
+php  每个单词中间以“_”隔开 #main_left_box{}
+驼峰命名 从第二个单词开始每个单词的首字母大写  #mainLeftBox{}
+写包含样式的时候能找到这个元素并且不影响其他元素即可
+页头：header  如：#header&amp;#123;属性:属性值;&amp;#125;或.header&amp;#123;属性:属性值;&amp;#125;,也许你需要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第七课：html&css2 其它的元素">
-<meta property="og:url" content="http://kuker.org/JavaSE/othercss/index.html">
+<meta property="og:title" content="css中常见的命名">
+<meta property="og:url" content="http://kuker.org/JavaSE/cssname/index.html">
 <meta property="og:site_name" content="KUKER">
-<meta property="og:description" content="热区	&amp;lt;img src=&quot;bigptr.jpg&quot; usemap=&quot;#Map&quot;/&amp;gt;	&amp;lt;map name=&quot;Map&quot;&amp;gt;		&amp;lt;area shape=&quot;circle&quot; coords=&quot;378,132,56&quot; href=&quot;#&quot;&amp;gt;	&amp;lt;/map&amp;gt;	&amp;lt;map name=&quot;Map&quot;&amp;gt;		&amp;lt;area shape=&quot;rect&quot; coords=&quot;462,1">
-<meta property="og:updated_time" content="2015-10-20T09:13:22.000Z">
+<meta property="og:description" content="命名：根据每块元素的主题 或者功能、在页面上的位置
+php  每个单词中间以“_”隔开 #main_left_box{}
+驼峰命名 从第二个单词开始每个单词的首字母大写  #mainLeftBox{}
+写包含样式的时候能找到这个元素并且不影响其他元素即可
+页头：header  如：#header&amp;#123;属性:属性值;&amp;#125;或.header&amp;#123;属性:属性值;&amp;#125;,也许你需要">
+<meta property="og:updated_time" content="2015-10-21T05:18:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第七课：html&css2 其它的元素">
-<meta name="twitter:description" content="热区	&amp;lt;img src=&quot;bigptr.jpg&quot; usemap=&quot;#Map&quot;/&amp;gt;	&amp;lt;map name=&quot;Map&quot;&amp;gt;		&amp;lt;area shape=&quot;circle&quot; coords=&quot;378,132,56&quot; href=&quot;#&quot;&amp;gt;	&amp;lt;/map&amp;gt;	&amp;lt;map name=&quot;Map&quot;&amp;gt;		&amp;lt;area shape=&quot;rect&quot; coords=&quot;462,1">
+<meta name="twitter:title" content="css中常见的命名">
+<meta name="twitter:description" content="命名：根据每块元素的主题 或者功能、在页面上的位置
+php  每个单词中间以“_”隔开 #main_left_box{}
+驼峰命名 从第二个单词开始每个单词的首字母大写  #mainLeftBox{}
+写包含样式的时候能找到这个元素并且不影响其他元素即可
+页头：header  如：#header&amp;#123;属性:属性值;&amp;#125;或.header&amp;#123;属性:属性值;&amp;#125;,也许你需要">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +70,7 @@
   };
 </script>
 
-  <title> 第七课：html&css2 其它的元素 | KUKER </title>
+  <title> css中常见的命名 | KUKER </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +177,7 @@
           
           
             
-              第七课：html&css2 其它的元素
+              css中常见的命名
             
           
         </h1>
@@ -174,8 +186,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-20T13:47:41+08:00" content="2015-10-20">
-            2015-10-20
+          <time itemprop="dateCreated" datetime="2015-10-21T13:16:47+08:00" content="2015-10-21">
+            2015-10-21
           </time>
         </span>
 
@@ -185,8 +197,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/JavaSE/othercss/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/othercss/" itemprop="commentsCount"></span>
+              <a href="/JavaSE/cssname/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="JavaSE/cssname/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -200,16 +212,11 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="热区">热区</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"bigptr.jpg"</span> <span class="attribute">usemap</span>=<span class="value">"#Map"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">map</span> <span class="attribute">name</span>=<span class="value">"Map"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">"circle"</span> <span class="attribute">coords</span>=<span class="value">"378,132,56"</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">map</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="title">map</span> <span class="attribute">name</span>=<span class="value">"Map"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">"rect"</span> <span class="attribute">coords</span>=<span class="value">"462,157,566,217"</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">map</span>&gt;</span></span><br><span class="line">map 热区 </span><br><span class="line">area 点击区域</span><br><span class="line">	shape="circle" 圆形 coords="圆心点X, 圆心点y, 圆半经"</span><br><span class="line"></span><br><span class="line">	shape="rect" 矩形 coords="矩形左上角x, 矩形左上角y,矩形右下角x,矩形右下角y"</span><br><span class="line"></span><br><span class="line">	shape="poly" 不规则 coords="第一个点x,第一个点y,第二个点...."</span><br></pre></td></tr></table></figure>
-<h2 id="data_uri">data uri</h2><p>图片转编码，减少http请求</p>
-<h2 id="iframe框架">iframe框架</h2><p>框架 － 已经不用<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">"http://www.baidu.com"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="页面中引入flash">页面中引入flash</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">object</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">param</span> <span class="attribute">name</span>=<span class="value">"wmode"</span> <span class="attribute">value</span>=<span class="value">"transparent"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">"1.swf"</span> <span class="attribute">width</span>=<span class="value">"400"</span> <span class="attribute">height</span>=<span class="value">"400"</span>&gt;</span><span class="tag">&lt;/<span class="title">embed</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">object</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>词内断行</li>
-<li>文本显示省略号:<br>p{width:200px; white-space:nowrap;overflow:hidden;text-overflow:ellipsis.}</li>
-<li>没有写文档那个说明，产生‘盒模型的怪异模式 ‘</li>
-</ol>
-<p>可视宽高：元素的内容宽＋padding + border<br>元素的内容宽：元素中可以放内容的宽度</p>
+        <span itemprop="articleBody"><p>命名：根据每块元素的主题 或者功能、在页面上的位置</p>
+<p>php  每个单词中间以“_”隔开 #main_left_box{}</p>
+<p>驼峰命名 从第二个单词开始每个单词的首字母大写  #mainLeftBox{}</p>
+<p>写包含样式的时候能找到这个元素并且不影响其他元素即可</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">页头：header  如：#header&#123;属性:属性值;&#125;或.header&#123;属性:属性值;&#125;,也许你需要了解class与id区别及用法</span><br><span class="line">登录条：loginBar         标志：logo                侧栏：sideBar </span><br><span class="line">广告：banner              导航：nav                 子导航：subNav</span><br><span class="line">菜单：menu               子菜单：subMenu      搜索：search</span><br><span class="line"> 滚动：scroll               页面主体：main         内容：content </span><br><span class="line">标签页：tab                 文章列表：list            提示信息：msg</span><br><span class="line">小技巧：tips                栏目标题：title            加入：joinus</span><br><span class="line">指南：guild                服务：service              热点：hot</span><br><span class="line">新闻：news                 下载：download         注册：regsiter </span><br><span class="line">状态：status                按钮：btn                    投票：vote </span><br><span class="line">合作伙伴：partner       友情链接：friendLink   页脚：footer </span><br><span class="line">版权：copyRight </span><br><span class="line"></span><br><span class="line">外　套：wrap           版    权：copyRight      商　标：label              标　题：title </span><br><span class="line">       顶导航：topnav </span><br><span class="line">边导航：sidebar           左导航：leftsideBar   右导航：rightsideBar </span><br><span class="line">           标　语：banner         菜单内容1： menu1Content </span><br><span class="line">菜单容量：　menuContainer                  子菜单：　　submenu </span><br><span class="line">边导航图标：sidebarIcon                        注释：　　　note </span><br><span class="line">面包屑：breadCrumb(即页面所处位置导航提示) </span><br><span class="line">容器：container      内容：content          搜索：search</span><br><span class="line">登陆：login             功能区：　　shop(如购物车，收银台) </span><br><span class="line">当前：current</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -221,13 +228,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/JavaSE/cssname/" rel="prev">css中常见的命名</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/JavaSE/ieproblem/" rel="next">第六课：关于一些常见的兼容性问题</a>
+              <a href="/JavaSE/othercss/" rel="next">第七课：html&css2 其它的元素</a>
             
           </div>
         </div>
@@ -252,8 +257,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="JavaSE/othercss/"
-                   data-title="第七课：html&css2 其它的元素" data-url="http://kuker.org/JavaSE/othercss/">
+              <div class="ds-thread" data-thread-key="JavaSE/cssname/"
+                   data-title="css中常见的命名" data-url="http://kuker.org/JavaSE/cssname/">
               </div>
             
           </div>
@@ -335,7 +340,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#热区"><span class="nav-number">1.</span> <span class="nav-text">热区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data_uri"><span class="nav-number">2.</span> <span class="nav-text">data uri</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe框架"><span class="nav-number">3.</span> <span class="nav-text">iframe框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面中引入flash"><span class="nav-number">4.</span> <span class="nav-text">页面中引入flash</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
